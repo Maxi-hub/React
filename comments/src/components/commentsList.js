@@ -17,10 +17,10 @@ function CommentsList() {
     return (
         <ul>
             {comments.map(comment =>
-                <div key={comment.id}>
-                    <li>{comment.text}</li>
-                    <button onClick={() => deleteComment(comment.id)}>Удалить {comment.id} комментарий</button>
-                </div>)}
+                <li key={comment.id}>{comment.text}<br></br>
+                <button onClick={() => deleteComment(comment.id)}>Удалить {comment.id} комментарий</button>
+                </li>
+            )}
         </ul>
     );
 }
