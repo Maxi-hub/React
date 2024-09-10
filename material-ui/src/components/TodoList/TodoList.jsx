@@ -11,8 +11,6 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import { useState } from 'react';
 import './TodoList-style.css';
 
-
-// где изменить настройки css для компонентов material ui
 export const TodoList = () => {
     const [text, setText] = useState('');
     const [list, setList] = useState([]);
@@ -20,7 +18,7 @@ export const TodoList = () => {
 
     const updateText = (e) => {
         setText(e.target.value);
-    }
+    };
 
     const updateList = () => {
         if (text.trim() === '') {
@@ -30,7 +28,7 @@ export const TodoList = () => {
         const newList = [...list, text];
         setList(newList);
         setText('');
-    }
+    };
 
     const handleToggle = (value) => () => {
         const currentIndex = checked.indexOf(value);
@@ -42,12 +40,12 @@ export const TodoList = () => {
             newChecked.splice(currentIndex, 1);
         }
         setChecked(newChecked);
-    }
+    };
 
     const deleteText = (value) => {
         const newList = list.filter(item => item !== value);
         setList(newList);
-    }
+    };
 
     return (
         <div className='todoList-box'>

@@ -15,17 +15,17 @@ function TemperatureConverter() {
 
     const updatedegree = (event) => {
         setDegree(event.target.value);
-    }
+    };
 
     const ConvertToFahrenheit = () => {
         setResult((degree * 1.8) + 32);
         setText("по Фаренгейту");
-    }
+    };
 
     const ConvertToCelsius = () => {
         setResult(((degree - 32) * 5 / 9).toFixed(1));
         setText("по Цельсию");
-    }
+    };
 
     return (
         <div className="temterature-block"  >
