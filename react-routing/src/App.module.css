@@ -15,6 +15,10 @@
     color: cornflowerblue;
 }
 
+.active {
+    color: rgb(114, 48, 114);
+}
+
 .itemLink {
     text-decoration: none;
     color: #000000a8;

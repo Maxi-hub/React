@@ -1,6 +1,6 @@
 import './App.css';
 import s from "./App.module.css";
-import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+import { BrowserRouter, NavLink, Route, Routes } from "react-router-dom";
 import { HomePage } from './components/Navigation/HomePage';
 import { AboutPage } from './components/Navigation/AboutPage';
 import { ListPage } from './components/Navigation/ListPage';
@@ -16,8 +16,8 @@ const items = [
   {
     id: 2, title: 'Анекдоты про программистов', content: [
       `Лет через пятьдесят… 
-      — Смотри, что я придумал! Просто нажимаешь кнопку на стене — и свет тихо включается или выключается! И не надо орать: «Алиса, включи свет!»`, 
-      'Играя в компьютерные игры, вы зарабатываете геморрой! Стоит ли игра свеч?', 
+      — Смотри, что я придумал! Просто нажимаешь кнопку на стене — и свет тихо включается или выключается! И не надо орать: «Алиса, включи свет!»`,
+      'Играя в компьютерные игры, вы зарабатываете геморрой! Стоит ли игра свеч?',
       `Жена отправляет мужа-программиста в магазин: 
       - Купи батон хлеба, если будут яйца - возьми десяток.
       Муж возвращается из магазина с десятью батонами.
@@ -30,23 +30,28 @@ const items = [
       — У нас остались только суки. 
       — Зачем мне сука, мне нормальную дайте! 
       — Сука — это пол собаки. 
-      — Не надо мне пол собаки, хочу купить целую.`, 
+      — Не надо мне пол собаки, хочу купить целую.`,
       `— У меня прекрасный пес. Каждое утро он приносит мне свежие газеты.
       — Подумаешь, любая дрессированная собака может это сделать.
-      — Да, но я не выписываю ни одной газеты…`, 
+      — Да, но я не выписываю ни одной газеты…`,
       'Найдена собака. Доберман. Окрас — черный. Зовут Бобик, не исключено, что врет.'
     ]
   },
 ];
+
+const activeStyle = ({ isActive }) => (
+  isActive ? `${s.link} ${s.active}` : s.link
+);
+
 
 function App() {
   return (
     <div>
       <BrowserRouter>
         <div className={s.container}>
-          <Link className={s.link} to="/"> Главная</Link>
-          <Link className={s.link} to="/about">Факт об осликах</Link>
-          <Link className={s.link} to="/items">Анекдоты</Link>
+          <NavLink className={activeStyle} to="/">Главная</NavLink>
+          <NavLink className={activeStyle} to="/about">Факт об осликах</NavLink>
+          <NavLink className={activeStyle} to="/items">Анекдоты</NavLink>
         </div>
         <Routes>
           <Route path='/' element={<HomePage />} />
