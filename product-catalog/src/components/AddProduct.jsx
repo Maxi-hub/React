@@ -20,6 +20,10 @@ const AddProduct = () => {
     if (product !== undefined) {
       const id = product.id;
       dispatch(updateProduct({ name, description, price: parseFloat(price), available, id }));
+      const liEl = document.getElementById(product.id);
+      if (liEl) {
+        liEl.classList.remove('li-box');
+      }
     } else {
       dispatch(addProduct({ name, description, price: parseFloat(price), available }));
     }
