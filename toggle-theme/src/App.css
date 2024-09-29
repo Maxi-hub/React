@@ -14,14 +14,13 @@
 }
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 70px;
 }
 
 .App-link {
@@ -38,18 +37,12 @@
 }
 
 .light {
-  border: 2px solid #000;
   background-color: white;
   color: black;
-  padding: 15px;
-  margin: 10px;
 }
 
 
 .dark {
-  border: 2px solid #000;
   background-color: black;
   color: white;
-  padding: 15px;
-  margin: 10px;
 }

@@ -1,15 +1,16 @@
-const TOGGLE_THEME = 'TOGGLE_THEME';
+export const TOGGLE_THEME = 'TOGGLE_THEME';
 
-export const themeReducer = (state = "light", action) => {
-    const toggleTheme = () => {
-        return (state === "light" ? "dark" : "light");
-    };
+const toggleTheme = (state) => {
+    return (state === "light" ? "dark" : "light");
+};
 
+const themeReducer = (state = "light", action) => {
     switch (action.type) {
         case TOGGLE_THEME:
-            return state = toggleTheme();
+            return toggleTheme(state);
         default:
             return state;
     }
-}; 
+};
 
+export default themeReducer;
