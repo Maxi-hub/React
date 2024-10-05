@@ -46,7 +46,7 @@ export const ShoppingCart = () => {
                         </div>`);
                 }
 
-                if(headingBucketBox) {
+                if (headingBucketBox) {
                     headingBucketBox.insertAdjacentHTML('afterbegin', `
                         <div className="heading__bucket-items" data-id="${obj.id}">
                             <Link to='/single_page'>    
@@ -60,9 +60,9 @@ export const ShoppingCart = () => {
                             <img className="heading__bucket-close" src=${images('./button_close.png')} alt=""/>
                         </div>
                         `
-                        );
+                    );
                 }
-               
+
             }
         }
 
@@ -118,8 +118,8 @@ export const ShoppingCart = () => {
                 <ShoppingCartProduct onGrandTotalChange={handleGrandTotalChange} />
             </div>
             <div className="buttons center">
-                <a className="button" href="#">cLEAR SHOPPING CART</a>
-                <a className="button" href="#">cONTINUE sHOPPING</a>
+                <Link to="#" className="button">cLEAR SHOPPING CART</Link>
+                <Link to="#" className="button">cONTINUE sHOPPING</Link>
             </div>
             <div className="checking center">
                 <div className="checking__adress">
@@ -127,19 +127,19 @@ export const ShoppingCart = () => {
                     <input type="text" name="country" id="country" placeholder="Bangladesh" />
                     <input type="text" placeholder="State" />
                     <input type="text" name="Postcode" id="Postcode" placeholder="Postcode / Zip" />
-                    <a className="button checking__adress_button" href="#">get a quote</a>
+                    <Link to="#" className="button checking__adress_button">get a quote</Link>
                 </div>
                 <div className="checking__discount">
                     <h3 className="checking__title">coupon discount</h3>
                     <p className="checking__text">Enter your coupon code if you have one</p>
                     <input type="text" placeholder="State" />
-                    <a className="button checking__discount_button" href="#">Apply coupon</a>
+                    <Link to="#" className="button checking__discount_button">Apply coupon</Link>
                 </div>
                 <div className="checking__total">
                     <p className="checking__subtotal">Sub total <span>${grandTotal}</span></p>
                     <p className="checking__grandtotal">GRAND TOTAL <span>${grandTotal}</span></p>
                     <hr />
-                    <a className="button checking__total_button" href="#">proceed to checkout</a>
+                    <Link to="#" className="button checking__total_button">proceed to checkout</Link>
                 </div>
             </div>
             <Subscribe />

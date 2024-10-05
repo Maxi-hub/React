@@ -62,7 +62,6 @@ const fotos = [
 
 export const ClosesItems = ({ checkedValues }) => {
     const [newFotos, setNewFotos] = useState(fotos);
-    console.log(checkedValues);
     useEffect(() => {
         const filteredFotos = checkedValues.length === 0 ? fotos : fotos.filter(foto => checkedValues.includes(foto.size));
         setNewFotos(filteredFotos);
@@ -79,7 +78,7 @@ export const ClosesItems = ({ checkedValues }) => {
                     </div>
                 </Link>
                 <div className="add-box">
-                    <a href="#bucket"
+                    <Link to="#bucket"
                         className="add"
                         onClick={(e) => {
                             e.preventDefault();
@@ -90,14 +89,14 @@ export const ClosesItems = ({ checkedValues }) => {
                         }}>
                         <img className="add-img" src={images('./bucket_white.png')} alt="" />
                         <p className="add-txt">Add to Cart</p>
-                    </a>
+                    </Link>
                     <div className="hover-box">
-                        <a href="#" className="refresh">
+                        <Link to='#' className="refresh">
                             <img src={images('./arrow_loop.png')} alt="" />
-                        </a>
-                        <a href="#" className="liked">
+                        </Link>
+                        <Link to='#' className="liked">
                             <img src={images('./heart.png')} alt="" />
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>

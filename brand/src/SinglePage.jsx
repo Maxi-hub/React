@@ -22,15 +22,15 @@ export const SinglePage = () => {
             <BreadCrumbs />
             <div className="fotos">
                 <div className="fotos__arrow">
-                    <a href="#">
+                    <Link to="#">
                         <img className="fotos__img1" src={images('./arrow_whiteleft.png')} alt="" />
-                    </a>
+                    </Link>
                 </div>
                 <img className="fotos__img2" src={images('./woman_on_chair.png')} alt="Woman on chair" />
                 <div className="fotos__arrow">
-                    <a href="#">
+                    <Link to="#">
                         <img className="fotos__img3" src={images('./arrow_whiteright.png')} alt="" />
-                    </a>
+                    </Link>
                 </div>
                 <div className="fotos__box center">
                     <div className="fotos__description">
@@ -52,7 +52,7 @@ export const SinglePage = () => {
                                     <summary className="filter__sort">
                                         <div className="filter__color-square1"></div>
                                         Red
-                                        <img className="filter__color-arrow" src={images('./arrow_grey_down.png')} />
+                                        <img className="filter__color-arrow" src={images('./arrow_grey_down.png')} alt=''/>
                                     </summary>
                                     <div className="filter__sort-box">
                                         <div className="filter__sort-check">
@@ -72,7 +72,7 @@ export const SinglePage = () => {
                                 <p className="filter__title">CHOOSE SIZE</p>
                                 <details className="filter__size">
                                     <summary className="filter__sort sort__new"> XXL
-                                        <img className="filter__color-arrow" src={images('./arrow_grey_down.png')} />
+                                        <img className="filter__color-arrow" src={images('./arrow_grey_down.png')} alt=''/>
                                     </summary>
                                     <div className="filter__sort-box">
                                         <div className="filter__sort-check">
@@ -99,10 +99,10 @@ export const SinglePage = () => {
                                 <input className="filter__number" type="number" placeholder="2" style={{ outline: "none", min: "1" }} />
                             </div>
                         </div>
-                        <a href="#" className="fotos__button-bucket">
+                        <Link to="#" className="fotos__button-bucket">
                             <img className="fotos__button-img" src={images('./bucket_white.png')} alt="" />
                             <p className="fotos__button-text">Add to Cart</p>
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>
@@ -110,7 +110,7 @@ export const SinglePage = () => {
                 <h1 className="single-page-items__title">you may like also</h1>
                 <div className="single-page-items__box">
                     <div className="single-page-items__item">
-                        <a href="#">
+                        <Link to="#">
                             <div className="single-page-items__img">
                                 <img src={images('./woman1.png')} alt="" />
                             </div>
@@ -121,10 +121,10 @@ export const SinglePage = () => {
                                     <img src={images('./5stars.png')} alt="" />
                                 </div>
                             </div>
-                        </a>
+                        </Link>
                     </div>
                     <div className="single-page-items__item">
-                        <a href="#">
+                        <Link to="#">
                             <div className="single-page-items__img">
                                 <img className="single-page-items__img2" src={images('./woman2.png')} alt="" />
                             </div>
@@ -132,10 +132,10 @@ export const SinglePage = () => {
                                 <p className="single-page-items__name">ALEXA SWEATER</p>
                                 <p className="single-page-items__price">$52.00</p>
                             </div>
-                        </a>
+                        </Link>
                     </div>
                     <div className="single-page-items__item">
-                        <a href="#">
+                        <Link to="#">
                             <div className="single-page-items__img">
                                 <img src={images('./woman3.png')} alt="" />
                             </div>
@@ -143,10 +143,10 @@ export const SinglePage = () => {
                                 <p className="single-page-items__name">AGNES TOP</p>
                                 <p className="single-page-items__price">$52.00</p>
                             </div>
-                        </a>
+                        </Link>
                     </div>
                     <div className="single-page-items__item">
-                        <a href="#">
+                        <Link to="#">
                             <div className="single-page-items__img">
                                 <img src={images('./woman4.png')} alt="" />
                             </div>
@@ -154,7 +154,7 @@ export const SinglePage = () => {
                                 <p className="single-page-items__name">SYLVA SWEATER</p>
                                 <p className="single-page-items__price">$52.00</p>
                             </div>
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </section>

@@ -7,13 +7,13 @@ import { Footer } from './components/Footer';
 import { BreadCrumbs } from './components/BreadCrumbs';
 import { NavigationMenu } from './components/NavigationMenu';
 import { ClosesItems } from './components/ClosesItems';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 const images = require.context('./img', true, /\.(jpg|png|svg)$/);
+const categoryList = ['Accessories', 'Bags', 'Denim', 'Hoodies & Sweatshirts', 'Jackets & Coats', 'Polos', 'Shirts', 'Shoes', 'Sweaters & Knits', 'T-shirts', 'Tanks'];
 
 export const Product = () => {
-    const sizes = ['XS', 'XXS', 'S', 'M', 'L', 'XL', 'XXL'];
     const [checkedValues, setCheckedValue] = useState([]);
-    // console.log(checkedValues);
 
     const handleChecked = (e) => {
         const labelValue = e.target.nextElementSibling.textContent;
@@ -22,9 +22,7 @@ export const Product = () => {
         } else {
             setCheckedValue(checkedValues.filter((value) => value !== labelValue));
         }
-        console.log(checkedValues);
     };
-
 
     return (
         <>
@@ -42,49 +40,25 @@ export const Product = () => {
                         <details className="filter__item" open>
                             <summary className="filter__head">CATEGORY</summary>
                             <div className="filter__link-box">
-                                <a href="#" className="filter__link">Accessories</a>
-                                <a href="#" className="filter__link">Bags</a>
-                                <a href="#" className="filter__link">Denim</a>
-                                <a href="#" className="filter__link">Hoodies & Sweatshirts</a>
-                                <a href="#" className="filter__link">Jackets & Coats</a>
-                                <a href="#" className="filter__link">Polos</a>
-                                <a href="#" className="filter__link">Shirts</a>
-                                <a href="#" className="filter__link">Shoes</a>
-                                <a href="#" className="filter__link">Sweaters & Knits</a>
-                                <a href="#" className="filter__link">T-shirts</a>
-                                <a href="#" className="filter__link">Tanks</a>
+                                {categoryList.map(item =>
+                                    <Link to="#" className="filter__link">{item}</Link>
+                                )}
                             </div>
                         </details>
                         <details className="filter__item">
                             <summary className="filter__head">BRAND</summary>
                             <div className="filter__link-box">
-                                <a href="#" className="filter__link">Accessories</a>
-                                <a href="#" className="filter__link">Bags</a>
-                                <a href="#" className="filter__link">Denim</a>
-                                <a href="#" className="filter__link">Hoodies & Sweatshirts</a>
-                                <a href="#" className="filter__link">Jackets & Coats</a>
-                                <a href="#" className="filter__link">Polos</a>
-                                <a href="#" className="filter__link">Shirts</a>
-                                <a href="#" className="filter__link">Shoes</a>
-                                <a href="#" className="filter__link">Sweaters & Knits</a>
-                                <a href="#" className="filter__link">T-shirts</a>
-                                <a href="#" className="filter__link">Tanks</a>
+                                {categoryList.map(item =>
+                                    <Link to="#" className="filter__link">{item}</Link>
+                                )}
                             </div>
                         </details>
                         <details className="filter__item">
                             <summary className="filter__head">DESIGN</summary>
                             <div className="filter__link-box">
-                                <a href="#" className="filter__link">Accessories</a>
-                                <a href="#" className="filter__link">Bags</a>
-                                <a href="#" className="filter__link">Denim</a>
-                                <a href="#" className="filter__link">Hoodies & Sweatshirts</a>
-                                <a href="#" className="filter__link">Jackets & Coats</a>
-                                <a href="#" className="filter__link">Polos</a>
-                                <a href="#" className="filter__link">Shirts</a>
-                                <a href="#" className="filter__link">Shoes</a>
-                                <a href="#" className="filter__link">Sweaters & Knits</a>
-                                <a href="#" className="filter__link">T-shirts</a>
-                                <a href="#" className="filter__link">Tanks</a>
+                                {categoryList.map(item =>
+                                    <Link to="#" className="filter__link">{item}</Link>
+                                )}
                             </div>
                         </details>
                     </div>
@@ -94,12 +68,12 @@ export const Product = () => {
                         <div className="sort__details">
                             <p className="sort__heading">TRANDING NOW</p>
                             <div className="sort__box">
-                                <a href="#" className="sort__link">Bohemian</a>
-                                <a href="#" className="sort__link">Floral</a>
-                                <a href="#" className="sort__link">Lace</a>
-                                <a href="#" className="sort__link">Floral</a>
-                                <a href="#" className="sort__link">Lace</a>
-                                <a href="#" className="sort__link">Bohemian</a>
+                                <Link to="#" className="sort__link">Bohemian</Link>
+                                <Link to="#" className="sort__link">Floral</Link>
+                                <Link to="#" className="sort__link">Lace</Link>
+                                <Link to="#" className="sort__link">Floral</Link>
+                                <Link to="#" className="sort__link">Lace</Link>
+                                <Link to="#" className="sort__link">Bohemian</Link>
                             </div>
                         </div>
                         <div className="sort__details">
@@ -194,7 +168,7 @@ export const Product = () => {
                         </div>
                     </div>
                     <div className="closes__box closes__box_position">
-                        <ClosesItems checkedValues={checkedValues}/>
+                        <ClosesItems checkedValues={checkedValues} />
                     </div>
                     <div className="flipping">
                         <nav className="flipping__number">
@@ -212,7 +186,7 @@ export const Product = () => {
                             </ul>
                             <img src={images('./arrow_pink_right.png')} alt="" />
                         </nav>
-                        <a href="#" className="flipping__button">View All</a>
+                        <Link to="#" className="flipping__button">View All</Link>
                     </div>
                 </div>
             </div>

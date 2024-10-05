@@ -133,18 +133,18 @@ function App() {
                 </div>
               </Link>
               <div className="add-box">
-                <a href="#bucket" 
-                className="add" 
-                onClick={(e) => {
-                  e.preventDefault();
-                  const bucketElement = document.getElementById('bucket');
-                  if (bucketElement) {
-                    bucketElement.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }}>
+                <Link to="#bucket"
+                  className="add"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const bucketElement = document.getElementById('bucket');
+                    if (bucketElement) {
+                      bucketElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}>
                   <img className="add-img" src={images('./bucket_white.png')} alt="" />
                   <p className="add-txt">Add to Cart</p>
-                </a>
+                </Link>
               </div>
             </div>
           ))}

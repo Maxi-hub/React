@@ -49,7 +49,7 @@ export const Checkout = () => {
                                 <img className="checkout__arrow" src="img/arrow_double.png" alt="" />
                                 <p className="checkout__text">Easy access to your order history and status</p>
                             </div>
-                            <a href="#" className="checkout__button">Continue</a>
+                            <Link to="#" className="checkout__button">Continue</Link>
                         </form>
                         <form className="checkout__right-box">
                             <h4 className="checkout__title">Already registed?</h4>
@@ -62,8 +62,8 @@ export const Checkout = () => {
                                 <p className="checkout__text checkout__text_color">* Required Fileds</p>
                             </div>
                             <div className="checkout__right-button">
-                                <a href="#" className="checkout__button" type="submit">Log in</a>
-                                <a href="#" className="checkout__button checkout__button_psw">Forgot Password ?</a>
+                                <Link to="#" className="checkout__button" type="submit">Log in</Link>
+                                <Link to="#" className="checkout__button checkout__button_psw">Forgot Password ?</Link>
                             </div>
                         </form>
                     </div>
@@ -96,7 +96,7 @@ export const Checkout = () => {
                                 <img className="checkout__arrow" src="img/arrow_double.png" alt="" />
                                 <p className="checkout__text">Easy access to your order history and status</p>
                             </div>
-                            <a href="#" className="checkout__button">Continue</a>
+                            <Link to="#" className="checkout__button">Continue</Link>
                         </div>
                         <div className="checkout__right-box">
                             <h4 className="checkout__title">Already registed?</h4>
@@ -109,8 +109,8 @@ export const Checkout = () => {
                                 <p className="checkout__text checkout__text_color">* Required Fileds</p>
                             </div>
                             <div className="checkout__right-button">
-                                <a href="#" className="checkout__button">Log in</a>
-                                <a href="#" className="checkout__button checkout__button_psw">Forgot Password ?</a>
+                                <Link to="#" className="checkout__button">Log in</Link>
+                                <Link to="#" className="checkout__button checkout__button_psw">Forgot Password ?</Link>
                             </div>
                         </div>
                     </div>
@@ -144,7 +144,7 @@ export const Checkout = () => {
                                 <img className="checkout__arrow" src="img/arrow_double.png" alt="" />
                                 <p className="checkout__text">Easy access to your order history and status</p>
                             </div>
-                            <a href="#" className="checkout__button">Continue</a>
+                            <Link to="#" className="checkout__button">Continue</Link>
                         </div>
                         <div className="checkout__right-box">
                             <h4 className="checkout__title">Already registed?</h4>
@@ -157,8 +157,8 @@ export const Checkout = () => {
                                 <p className="checkout__text checkout__text_color">* Required Fileds</p>
                             </div>
                             <div className="checkout__right-button">
-                                <a href="#" className="checkout__button">Log in</a>
-                                <a href="#" className="checkout__button checkout__button_psw">Forgot Password ?</a>
+                                <Link to="#" className="checkout__button">Log in</Link>
+                                <Link to="#" className="checkout__button checkout__button_psw">Forgot Password ?</Link>
                             </div>
                         </div>
                     </div>
@@ -192,7 +192,7 @@ export const Checkout = () => {
                                 <img className="checkout__arrow" src="img/arrow_double.png" alt="" />
                                 <p className="checkout__text">Easy access to your order history and status</p>
                             </div>
-                            <a href="#" className="checkout__button">Continue</a>
+                            <Link to="#" className="checkout__button">Continue</Link>
                         </div>
                         <div className="checkout__right-box">
                             <h4 className="checkout__title">Already registed?</h4>
@@ -205,8 +205,8 @@ export const Checkout = () => {
                                 <p className="checkout__text checkout__text_color">* Required Fileds</p>
                             </div>
                             <div className="checkout__right-button">
-                                <a href="#" className="checkout__button">Log in</a>
-                                <a href="#" className="checkout__button checkout__button_psw">Forgot Password ?</a>
+                                <Link to="#" className="checkout__button">Log in</Link>
+                                <Link to="#" className="checkout__button checkout__button_psw">Forgot Password ?</Link>
                             </div>
                         </div>
                     </div>
@@ -240,7 +240,7 @@ export const Checkout = () => {
                                 <img className="checkout__arrow" src="img/arrow_double.png" alt="" />
                                 <p className="checkout__text">Easy access to your order history and status</p>
                             </div>
-                            <a href="#" className="checkout__button">Continue</a>
+                            <Link to="#" className="checkout__button">Continue</Link>
                         </div>
                         <div className="checkout__right-box">
                             <h4 className="checkout__title">Already registed?</h4>
@@ -253,8 +253,8 @@ export const Checkout = () => {
                                 <p className="checkout__text checkout__text_color">* Required Fileds</p>
                             </div>
                             <div className="checkout__right-button">
-                                <a href="#" className="checkout__button">Log in</a>
-                                <a href="#" className="checkout__button checkout__button_psw">Forgot Password ?</a>
+                                <Link to="#" className="checkout__button">Log in</Link>
+                                <Link to="#" className="checkout__button checkout__button_psw">Forgot Password ?</Link>
                             </div>
                         </div>
                     </div>
@@ -288,7 +288,7 @@ export const Checkout = () => {
                                 <img className="checkout__arrow" src="img/arrow_double.png" alt="" />
                                 <p className="checkout__text">Easy access to your order history and status</p>
                             </div>
-                            <a href="#" className="checkout__button">Continue</a>
+                            <Link to="#" className="checkout__button">Continue</Link>
                         </div>
                         <div className="checkout__right-box">
                             <h4 className="checkout__title">Already registed?</h4>
@@ -301,8 +301,8 @@ export const Checkout = () => {
                                 <p className="checkout__text checkout__text_color">* Required Fileds</p>
                             </div>
                             <div className="checkout__right-button">
-                                <a href="#" className="checkout__button">Log in</a>
-                                <a href="#" className="checkout__button checkout__button_psw">Forgot Password ?</a>
+                                <Link to="#" className="checkout__button">Log in</Link>
+                                <Link to="#" className="checkout__button checkout__button_psw">Forgot Password ?</Link>
                             </div>
                         </div>
                     </div>
