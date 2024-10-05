@@ -4,9 +4,9 @@ import { useEffect, useState } from 'react';
 const images = require.context('../img', true, /\.(jpg|png|svg)$/);
 const fotos = [
     {
-        'img': 'item1.jpg',
+        'img': 'man1_cart.png',
         'title': 'MANGO PEOPLE T-SHIRT',
-        'price': 42,
+        'price': 150,
     },
     {
         'img': 'man2_cart.png',

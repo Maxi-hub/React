@@ -7,9 +7,25 @@ import { Footer } from './components/Footer';
 import { BreadCrumbs } from './components/BreadCrumbs';
 import { NavigationMenu } from './components/NavigationMenu';
 import { ClosesItems } from './components/ClosesItems';
+import { useEffect, useState } from 'react';
 const images = require.context('./img', true, /\.(jpg|png|svg)$/);
 
 export const Product = () => {
+    const sizes = ['XS', 'XXS', 'S', 'M', 'L', 'XL', 'XXL'];
+    const [checkedValues, setCheckedValue] = useState([]);
+    // console.log(checkedValues);
+
+    const handleChecked = (e) => {
+        const labelValue = e.target.nextElementSibling.textContent;
+        if (e.target.checked) {
+            setCheckedValue([...checkedValues, labelValue]);
+        } else {
+            setCheckedValue(checkedValues.filter((value) => value !== labelValue));
+        }
+        console.log(checkedValues);
+    };
+
+
     return (
         <>
             <Helmet>
@@ -90,31 +106,60 @@ export const Product = () => {
                             <p className="sort__heading">SIZE</p>
                             <div className="sort__size-box">
                                 <div className="sort__check">
-                                    <input type="checkbox" />
+                                    <input
+                                        className='checkbox'
+                                        type="checkbox"
+                                        value='XS'
+                                        onClick={(e) => handleChecked(e)}
+                                    />
                                     <label htmlFor="#">XS</label>
                                 </div>
                                 <div className="sort__check">
-                                    <input type="checkbox" />
+                                    <input
+                                        className='checkbox'
+                                        type="checkbox"
+                                        value='XXS'
+                                        onClick={(e) => handleChecked(e)} />
                                     <label htmlFor="#">XXS</label>
                                 </div>
                                 <div className="sort__check">
-                                    <input type="checkbox" />
+                                    <input
+                                        className='checkbox'
+                                        type="checkbox"
+                                        value='S'
+                                        onClick={(e) => handleChecked(e)} />
                                     <label htmlFor="#">S</label>
                                 </div>
                                 <div className="sort__check">
-                                    <input type="checkbox" />
+                                    <input
+                                        className='checkbox'
+                                        type="checkbox"
+                                        value='M'
+                                        onClick={(e) => handleChecked(e)} />
                                     <label htmlFor="#">M</label>
                                 </div>
                                 <div className="sort__check">
-                                    <input type="checkbox" />
+                                    <input
+                                        className='checkbox'
+                                        type="checkbox"
+                                        value='L'
+                                        onClick={(e) => handleChecked(e)} />
                                     <label htmlFor="#">L</label>
                                 </div>
                                 <div className="sort__check">
-                                    <input type="checkbox" />
+                                    <input
+                                        className='checkbox'
+                                        type="checkbox"
+                                        value='XL'
+                                        onClick={(e) => handleChecked(e)} />
                                     <label htmlFor="#">XL</label>
                                 </div>
                                 <div className="sort__check">
-                                    <input type="checkbox" />
+                                    <input
+                                        className='checkbox'
+                                        type="checkbox"
+                                        value='XXL'
+                                        onClick={(e) => handleChecked(e)} />
                                     <label htmlFor="#">XXL</label>
                                 </div>
                             </div>
@@ -136,7 +181,7 @@ export const Product = () => {
                         <div className="sorting__name">
                             <div className="sorting__title">Sort By</div>
                             <div className="sorting__sort">
-                                <p>Name</p>
+                                <p>Size</p>
                                 <img src={images('./arrow_grey_down.png')} alt="" />
                             </div>
                         </div>
@@ -149,214 +194,7 @@ export const Product = () => {
                         </div>
                     </div>
                     <div className="closes__box closes__box_position">
-                        {/* <div className="closes__items">
-                            <a className="closes__link" href="product.html">
-                                <img className="closes__items-img" src={images('./item1.jpg')} alt="" />
-                                <div className="closes__items-text">
-                                    <p className="closes__items-title">MANGO PEOPLE T-SHIRT</p>
-                                    <p className="closes__price">$52.00</p>
-                                </div>
-                            </a>
-                            <div className="add-box">
-                                <a href="#bucket" className="add">
-                                    <img className="add-img" src={images('./bucket_white.png')} alt="" />
-                                    <p className="add-txt">Add to Cart</p>
-                                </a>
-                                <div className="hover-box">
-                                    <a href="#" className="refresh">
-                                        <img src={images('./arrow_loop.png')} alt="" />
-                                    </a>
-                                    <a href="#" className="liked">
-                                        <img src={images('./heart.png')} alt="" />
-                                    </a>
-                                </div>
-                            </div>
-                        </div> */}
-                        {/* <div className="closes__items">
-                            <a className="closes__link" href="product.html">
-                                <img className="closes__items-img" src={images('./item2.jpg')} alt="" />
-                                <div className="closes__items-text">
-                                    <p className="closes__items-title">MANGO PEOPLE T-SHIRT</p>
-                                    <p className="closes__price">$52.00</p>
-                                </div>
-                            </a>
-                            <div className="add-box">
-                                <a href="#bucket" className="add">
-                                    <img className="add-img" src={images('./bucket_white.png')} alt="" />
-                                    <p className="add-txt">Add to Cart</p>
-                                </a>
-                                <div className="hover-box">
-                                    <a href="#" className="refresh">
-                                        <img src={images('./arrow_loop.png')} alt="" />
-                                    </a>
-                                    <a href="#" className="liked">
-                                        <img src={images('./heart.png')} alt="" />
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="closes__items">
-                            <a className="closes__link" href="product.html">
-                                <img className="closes__items-img" src={images('./item3.jpg')} alt="" />
-                                <div className="closes__items-text">
-                                    <p className="closes__items-title">MANGO PEOPLE T-SHIRT</p>
-                                    <p className="closes__price">$52.00</p>
-                                </div>
-                            </a>
-                            <div className="add-box">
-                                <a href="#bucket" className="add">
-                                    <img className="add-img" src={images('./bucket_white.png')} alt="" />
-                                    <p className="add-txt">Add to Cart</p>
-                                </a>
-                                <div className="hover-box">
-                                    <a href="#" className="refresh">
-                                        <img src={images('./arrow_loop.png')} alt="" />
-                                    </a>
-                                    <a href="#" className="liked">
-                                        <img src={images('./heart.png')} alt="" />
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="closes__items">
-                            <a className="closes__link" href="product.html">
-                                <img className="closes__items-img" src={images('./item4.jpg')} alt="" />
-                                <div className="closes__items-text">
-                                    <p className="closes__items-title">MANGO PEOPLE T-SHIRT</p>
-                                    <p className="closes__price">$52.00</p>
-                                </div>
-                            </a>
-                            <div className="add-box">
-                                <a href="#bucket" className="add">
-                                    <img className="add-img" src={images('./bucket_white.png')} alt="" />
-                                    <p className="add-txt">Add to Cart</p>
-                                </a>
-                                <div className="hover-box">
-                                    <a href="#" className="refresh">
-                                        <img src={images('./arrow_loop.png')} alt="" />
-                                    </a>
-                                    <a href="#" className="liked">
-                                        <img src={images('./heart.png')} alt="" />
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="closes__items">
-                            <a className="closes__link" href="product.html">
-                                <img className="closes__items-img" src={images('./item5.jpg')} alt="" />
-                                <div className="closes__items-text">
-                                    <p className="closes__items-title">MANGO PEOPLE T-SHIRT</p>
-                                    <p className="closes__price">$52.00</p>
-                                </div>
-                            </a>
-                            <div className="add-box">
-                                <a href="#bucket" className="add">
-                                    <img className="add-img" src={images('./bucket_white.png')} alt="" />
-                                    <p className="add-txt">Add to Cart</p>
-                                </a>
-                                <div className="hover-box">
-                                    <a href="#" className="refresh">
-                                        <img src={images('./arrow_loop.png')} alt="" />
-                                    </a>
-                                    <a href="#" className="liked">
-                                        <img src={images('./heart.png')} alt="" />
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="closes__items">
-                            <a className="closes__link" href="product.html">
-                                <img className="closes__items-img" src={images('./item6.jpg')} alt="" />
-                                <div className="closes__items-text">
-                                    <p className="closes__items-title">MANGO PEOPLE T-SHIRT</p>
-                                    <p className="closes__price">$52.00</p>
-                                </div>
-                            </a>
-                            <div className="add-box">
-                                <a href="#bucket" className="add">
-                                    <img className="add-img" src={images('./bucket_white.png')} alt="" />
-                                    <p className="add-txt">Add to Cart</p>
-                                </a>
-                                <div className="hover-box">
-                                    <a href="#" className="refresh">
-                                        <img src={images('./arrow_loop.png')} alt="" />
-                                    </a>
-                                    <a href="#" className="liked">
-                                        <img src={images('./heart.png')} alt="" />
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="closes__items">
-                            <a className="closes__link" href="product.html">
-                                <img className="closes__items-img" src={images('./item7.jpg')} alt="" />
-                                <div className="closes__items-text">
-                                    <p className="closes__items-title">MANGO PEOPLE T-SHIRT</p>
-                                    <p className="closes__price">$52.00</p>
-                                </div>
-                            </a>
-                            <div className="add-box">
-                                <a href="#bucket" className="add">
-                                    <img className="add-img" src={images('./bucket_white.png')} alt="" />
-                                    <p className="add-txt">Add to Cart</p>
-                                </a>
-                                <div className="hover-box">
-                                    <a href="#" className="refresh">
-                                        <img src={images('./arrow_loop.png')} alt="" />
-                                    </a>
-                                    <a href="#" className="liked">
-                                        <img src={images('./heart.png')} alt="" />
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="closes__items">
-                            <a className="closes__link" href="product.html">
-                                <img className="closes__items-img" src={images('./item8.jpg')} alt="" />
-                                <div className="closes__items-text">
-                                    <p className="closes__items-title">MANGO PEOPLE T-SHIRT</p>
-                                    <p className="closes__price">$52.00</p>
-                                </div>
-                            </a>
-                            <div className="add-box">
-                                <a href="#bucket" className="add">
-                                    <img className="add-img" src={images('./bucket_white.png')} alt="" />
-                                    <p className="add-txt">Add to Cart</p>
-                                </a>
-                                <div className="hover-box">
-                                    <a href="#" className="refresh">
-                                        <img src={images('./arrow_loop.png')} alt="" />
-                                    </a>
-                                    <a href="#" className="liked">
-                                        <img src={images('./heart.png')} alt="" />
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="closes__items">
-                            <a className="closes__link" href="product.html">
-                                <img className="closes__items-img" src={images('./item4.jpg')} alt="" />
-                                <div className="closes__items-text">
-                                    <p className="closes__items-title">MANGO PEOPLE T-SHIRT</p>
-                                    <p className="closes__price">$52.00</p>
-                                </div>
-                            </a>
-                            <div className="add-box">
-                                <a href="#bucket" className="add">
-                                    <img className="add-img" src={images('./bucket_white.png')} alt="" />
-                                    <p className="add-txt">Add to Cart</p>
-                                </a>
-                                <div className="hover-box">
-                                    <a href="#" className="refresh">
-                                        <img src={images('./arrow_loop.png')} alt="" />
-                                    </a>
-                                    <a href="#" className="liked">
-                                        <img src={images('./heart.png')} alt="" />
-                                    </a>
-                                </div>
-                            </div>
-                        </div> */}
-                        <ClosesItems />
+                        <ClosesItems checkedValues={checkedValues}/>
                     </div>
                     <div className="flipping">
                         <nav className="flipping__number">

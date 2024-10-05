@@ -23,42 +23,46 @@ export const ShoppingCart = () => {
         if (localStorage.length > 0) {
             for (const key in localStorage) {
                 const obj = JSON.parse(localStorage.getItem(key));
-                shoppingCart.insertAdjacentHTML('beforeend', `
-            <div className="product">
-                <div className="product__left">
-                    <Link to='/product'> 
-                        <img src=${images(`./${obj.img}`)} alt=""/> 
-                    </Link>
-                    <div className="product__details">
-                        <h4 className="product__title">${obj.title}</h4>
-                        <p className="product__text">Color: <span>Red</span></p>
-                        <p className="product__text">Size: <span>Xll</span></p>
-                    </div>
-                </div>
-                <div className="product__info">
-                    <p className="product__text">$${obj.price}</p>
-                    <input className="product__quantity" type="number" name="quantity" id="quantity" min="1" placeholder="1"/>
-                    <p className="product__text">FREE</p>
-                    <p className="product__text">$300</p>
-                    <img className="product__info-img" src=${images('./button_close.png')} alt=""/>
-                </div>
-            </div>`);
+                if (shoppingCart) {
+                    shoppingCart.insertAdjacentHTML('beforeend', `
+                        <div className="product">
+                            <div className="product__left">
+                                <Link to='/product'> 
+                                    <img src=${images(`./${obj.img}`)} alt=""/> 
+                                </Link>
+                                <div className="product__details">
+                                    <h4 className="product__title">${obj.title}</h4>
+                                    <p className="product__text">Color: <span>Red</span></p>
+                                    <p className="product__text">Size: <span>Xll</span></p>
+                                </div>
+                            </div>
+                            <div className="product__info">
+                                <p className="product__text">$${obj.price}</p>
+                                <input className="product__quantity" type="number" name="quantity" id="quantity" min="1" placeholder="1"/>
+                                <p className="product__text">FREE</p>
+                                <p className="product__text">$300</p>
+                                <img className="product__info-img" src=${images('./button_close.png')} alt=""/>
+                            </div>
+                        </div>`);
+                }
 
-
-                headingBucketBox.insertAdjacentHTML('afterbegin', `
-                <div className="heading__bucket-items" data-id="${obj.id}">
-                    <Link to='/single_page'>    
-                        <img className="heading__bucket-item" src=${images(`./${obj.img}`)} alt="" />
-                    </Link>
-                    <div className="heading__bucket-text">
-                        <h5 className="heading__bucket-title">${obj.title}</h5>
-                        <img className="heading__bucket-stars" src=${images('./stars.png')} alt=""/>
-                        <p className="heading__bucket-price">${obj.count} x $${obj.price}</p>
-                    </div>
-                    <img className="heading__bucket-close" src=${images('./button_close.png')} alt=""/>
-                </div>
-                `
-                );
+                if(headingBucketBox) {
+                    headingBucketBox.insertAdjacentHTML('afterbegin', `
+                        <div className="heading__bucket-items" data-id="${obj.id}">
+                            <Link to='/single_page'>    
+                                <img className="heading__bucket-item" src=${images(`./${obj.img}`)} alt="" />
+                            </Link>
+                            <div className="heading__bucket-text">
+                                <h5 className="heading__bucket-title">${obj.title}</h5>
+                                <img className="heading__bucket-stars" src=${images('./stars.png')} alt=""/>
+                                <p className="heading__bucket-price">${obj.count} x $${obj.price}</p>
+                            </div>
+                            <img className="heading__bucket-close" src=${images('./button_close.png')} alt=""/>
+                        </div>
+                        `
+                        );
+                }
+               
             }
         }
 
