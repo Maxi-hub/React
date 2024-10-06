@@ -52,7 +52,7 @@ export const SinglePage = () => {
                                     <summary className="filter__sort">
                                         <div className="filter__color-square1"></div>
                                         Red
-                                        <img className="filter__color-arrow" src={images('./arrow_grey_down.png')} alt=''/>
+                                        <img className="filter__color-arrow" src={images('./arrow_grey_down.png')} alt='' />
                                     </summary>
                                     <div className="filter__sort-box">
                                         <div className="filter__sort-check">
@@ -72,7 +72,7 @@ export const SinglePage = () => {
                                 <p className="filter__title">CHOOSE SIZE</p>
                                 <details className="filter__size">
                                     <summary className="filter__sort sort__new"> XXL
-                                        <img className="filter__color-arrow" src={images('./arrow_grey_down.png')} alt=''/>
+                                        <img className="filter__color-arrow" src={images('./arrow_grey_down.png')} alt='' />
                                     </summary>
                                     <div className="filter__sort-box">
                                         <div className="filter__sort-check">

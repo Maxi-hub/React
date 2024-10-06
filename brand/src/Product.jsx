@@ -9,6 +9,7 @@ import { NavigationMenu } from './components/NavigationMenu';
 import { ClosesItems } from './components/ClosesItems';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+
 const images = require.context('./img', true, /\.(jpg|png|svg)$/);
 const categoryList = ['Accessories', 'Bags', 'Denim', 'Hoodies & Sweatshirts', 'Jackets & Coats', 'Polos', 'Shirts', 'Shoes', 'Sweaters & Knits', 'T-shirts', 'Tanks'];
 

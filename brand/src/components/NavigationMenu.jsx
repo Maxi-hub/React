@@ -1,6 +1,14 @@
 import { Link } from 'react-router-dom';
 import '../style.scss';
 const images = require.context('../img', true, /\.(jpg|png|svg)$/);
+const homeCollection = ['Dresses', 'Tops', 'Sweaters/Knits', 'Jackets/Coats', 'Blazers', 'Denim', 'Leggings/Pants', 'Skirts/Shorts', 'Accessories'];
+const menColection = ['Pants', 'Tops', 'Sweaters/Knits', 'Jackets/Coats', 'Blazers', 'Denim', 'Skirts/Shorts', 'Accessories'];
+const womenColection1 = ['Dresses', 'Tops', 'Sweaters/Knits', 'Jackets/Coats', 'Blazers', 'Denim', 'Leggings/Pants', 'Skirts/Shorts', 'Accessories'];
+const womenColection2 = ['Dresses', 'Tops', 'Sweaters/Knits', 'Jackets/Coats'];
+const womenColection3 = ['Blazers', 'Denim', 'Leggings/Pants', 'Skirts/Shorts', 'Accessories'];
+const kidsCollection = ['Dresses', 'Tops', 'Sweaters/Knits', 'Jackets/Coats', 'Blazers', 'Denim', 'Leggings/Pants', 'Skirts/Shorts', 'Accessories'];
+const accoserieseCollection = ['umbrellas', 'ties', 'bags and backpacks', 'belts', 'sunglasses', 'cufflinks'];
+
 
 export const NavigationMenu = () => {
     return (
@@ -12,33 +20,21 @@ export const NavigationMenu = () => {
                         <div className="top__box">
                             <div className="top__item">
                                 <h3 className="top__title">Home</h3>
-                                <a href="#" className="top__title-link">Dresses</a>
-                                <a href="#" className="top__title-link">Tops</a>
-                                <a href="#" className="top__title-link">Sweaters/Knits</a>
-                                <a href="#" className="top__title-link">Jackets/Coats</a>
-                                <a href="#" className="top__title-link">Blazers</a>
-                                <a href="#" className="top__title-link">Denim</a>
-                                <a href="#" className="top__title-link">Leggings/Pants</a>
-                                <a href="#" className="top__title-link">Skirts/Shorts</a>
-                                <a href="#" className="top__title-link">Accessories </a>
+                                {homeCollection.map(item =>
+                                    <Link to="#" className="top__title-link">{item}</Link>
+                                )}
                             </div>
                             <div className="top__item">
                                 <h3 className="top__title">Home</h3>
-                                <a href="#" className="top__title-link">Dresses</a>
-                                <a href="#" className="top__title-link">Tops</a>
-                                <a href="#" className="top__title-link">Sweaters/Knits</a>
-                                <a href="#" className="top__title-link">Jackets/Coats</a>
-                                <a href="#" className="top__title-link">Blazers</a>
-                                <a href="#" className="top__title-link">Denim</a>
-                                <a href="#" className="top__title-link">Leggings/Pants</a>
-                                <a href="#" className="top__title-link">Skirts/Shorts</a>
-                                <a href="#" className="top__title-link">Accessories </a>
+                                {homeCollection.map(item =>
+                                    <Link to="#" className="top__title-link">{item}</Link>
+                                )}
                             </div>
                             <div className="top__item">
                                 <h3 className="top__title">Home</h3>
-                                <a href="#" className="top__title-link">Dresses</a>
-                                <a href="#" className="top__title-link">Tops</a>
-                                <a href="#" className="top__title-link">Sweaters/Knits</a>
+                                {homeCollection.map(item =>
+                                    <Link to="#" className="top__title-link">{item}</Link>
+                                )}
                             </div>
                         </div>
                     </li>
@@ -46,44 +42,33 @@ export const NavigationMenu = () => {
                         <Link className="top__link" to='/product'>Man</Link>
                         <div className="top__box">
                             <div className="top__item">
-                                <h3 className="top__title">Man</h3>
-                                <a href="#" className="top__title-link">Dresses</a>
-                                <a href="#" className="top__title-link">Tops</a>
-                                <a href="#" className="top__title-link">Sweaters/Knits</a>
-                                <a href="#" className="top__title-link">Jackets/Coats</a>
-                                <a href="#" className="top__title-link">Blazers</a>
-                                <a href="#" className="top__title-link">Denim</a>
-                                <a href="#" className="top__title-link">Leggings/Pants</a>
-                                <a href="#" className="top__title-link">Skirts/Shorts</a>
-                                <a href="#" className="top__title-link">Accessories </a>
+                                <h3 className="top__title">Men</h3>
+                                {menColection.map(item =>
+                                    <Link to="#" className="top__title-link">{item}</Link>
+                                )}
                             </div>
                             <div className="top__item">
-                                <h3 className="top__title">Man</h3>
-                                <a href="#" className="top__title-link">Dresses</a>
-                                <a href="#" className="top__title-link">Tops</a>
-                                <a href="#" className="top__title-link">Sweaters/Knits</a>
-                                <a href="#" className="top__title-link">Jackets/Coats</a>
+                                <h3 className="top__title">Men</h3>
+                                {menColection.map(item =>
+                                    <Link to="#" className="top__title-link">{item}</Link>
+                                )}
                             </div>
                             <div className="top__item">
-                                <h3 className="top__title">Man</h3>
-                                <a href="#" className="top__title-link">Dresses</a>
-                                <a href="#" className="top__title-link">Tops</a>
-                                <a href="#" className="top__title-link">Sweaters/Knits</a>
+                                <h3 className="top__title">Men</h3>
+                                {menColection.map(item =>
+                                    <Link to="#" className="top__title-link">{item}</Link>
+                                )}
                             </div>
                             <div className="top__item">
-                                <h3 className="top__title">Man</h3>
-                                <a href="#" className="top__title-link">Dresses</a>
-                                <a href="#" className="top__title-link">Tops</a>
-                                <a href="#" className="top__title-link">Sweaters/Knits</a>
-                                <a href="#" className="top__title-link">Jackets/Coats</a>
-                                <a href="#" className="top__title-link">Dresses</a>
-                                <a href="#" className="top__title-link">Tops</a>
-                                <a href="#" className="top__title-link">Sweaters/Knits</a>
-                                <a href="#" className="top__title-link">Jackets/Coats</a>
-                                <div className="top__item-ibox"><a href="#">
-                                    <img className="top__item-img" src={images('./super_sale.png')} alt="" />
-                                    <p className="top__item-pro">Super<br />sale!</p>
-                                </a>
+                                <h3 className="top__title">Men</h3>
+                                {menColection.map(item =>
+                                    <Link to="#" className="top__title-link">{item}</Link>
+                                )}
+                                <div className="top__item-ibox">
+                                    <Link to="#">
+                                        <img className="top__item-img" src={images('./super_sale.png')} alt="" />
+                                        <p className="top__item-pro">Super<br />sale!</p>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -93,40 +78,27 @@ export const NavigationMenu = () => {
                         <div className="top__box">
                             <div className="top__item">
                                 <h3 className="top__title">Women</h3>
-                                <a href="#" className="top__title-link">Dresses</a>
-                                <a href="#" className="top__title-link">Tops</a>
-                                <a href="#" className="top__title-link">Sweaters/Knits</a>
-                                <a href="#" className="top__title-link">Jackets/Coats</a>
-                                <a href="#" className="top__title-link">Blazers</a>
-                                <a href="#" className="top__title-link">Denim</a>
-                                <a href="#" className="top__title-link">Leggings/Pants</a>
-                                <a href="#" className="top__title-link">Skirts/Shorts</a>
-                                <a href="#" className="top__title-link">Accessories </a>
+                                {womenColection1.map(item =>
+                                    <Link to="#" className="top__title-link">{item}</Link>
+                                )}
                             </div>
                             <div className="top__item">
                                 <h3 className="top__title">Women</h3>
-                                <a href="#" className="top__title-link">Dresses</a>
-                                <a href="#" className="top__title-link">Tops</a>
-                                <a href="#" className="top__title-link">Sweaters/Knits</a>
-                                <a href="#" className="top__title-link">Jackets/Coats</a>
+                                {womenColection2.map(item =>
+                                    <Link to="#" className="top__title-link">{item}</Link>
+                                )}
                             </div>
                             <div className="top__item">
                                 <h3 className="top__title">Women</h3>
-                                <a href="#" className="top__title-link">Dresses</a>
-                                <a href="#" className="top__title-link">Tops</a>
-                                <a href="#" className="top__title-link">Sweaters/Knits</a>
+                                {womenColection3.map(item =>
+                                    <Link to="#" className="top__title-link">{item}</Link>
+                                )}
                             </div>
                             <div className="top__item">
                                 <h3 className="top__title">Women</h3>
-                                <a href="#" className="top__title-link">Dresses</a>
-                                <a href="#" className="top__title-link">Tops</a>
-                                <a href="#" className="top__title-link">Sweaters/Knits</a>
-                                <a href="#" className="top__title-link">Jackets/Coats</a>
-                                <a href="#" className="top__title-link">Blazers</a>
-                                <a href="#" className="top__title-link">Denim</a>
-                                <a href="#" className="top__title-link">Leggings/Pants</a>
-                                <a href="#" className="top__title-link">Skirts/Shorts</a>
-                                <a href="#" className="top__title-link">Accessories </a>
+                                {womenColection1.map(item =>
+                                    <Link to="#" className="top__title-link">{item}</Link>
+                                )}
                             </div>
                         </div>
                     </li>
@@ -135,39 +107,21 @@ export const NavigationMenu = () => {
                         <div className="top__box">
                             <div className="top__item">
                                 <h3 className="top__title">Kids</h3>
-                                <a href="#" className="top__title-link">Dresses</a>
-                                <a href="#" className="top__title-link">Tops</a>
-                                <a href="#" className="top__title-link">Sweaters/Knits</a>
-                                <a href="#" className="top__title-link">Jackets/Coats</a>
-                                <a href="#" className="top__title-link">Blazers</a>
-                                <a href="#" className="top__title-link">Denim</a>
-                                <a href="#" className="top__title-link">Leggings/Pants</a>
-                                <a href="#" className="top__title-link">Skirts/Shorts</a>
-                                <a href="#" className="top__title-link">Accessories </a>
+                                {kidsCollection.map(item =>
+                                    <Link to="#" className="top__title-link">{item}</Link>
+                                )}
                             </div>
                             <div className="top__item">
                                 <h3 className="top__title">Kids</h3>
-                                <a href="#" className="top__title-link">Dresses</a>
-                                <a href="#" className="top__title-link">Tops</a>
-                                <a href="#" className="top__title-link">Sweaters/Knits</a>
-                                <a href="#" className="top__title-link">Jackets/Coats</a>
-                                <a href="#" className="top__title-link">Blazers</a>
-                                <a href="#" className="top__title-link">Denim</a>
-                                <a href="#" className="top__title-link">Leggings/Pants</a>
-                                <a href="#" className="top__title-link">Skirts/Shorts</a>
-                                <a href="#" className="top__title-link">Accessories </a>
+                                {kidsCollection.map(item =>
+                                    <Link to="#" className="top__title-link">{item}</Link>
+                                )}
                             </div>
                             <div className="top__item">
                                 <h3 className="top__title">Kids</h3>
-                                <a href="#" className="top__title-link">Dresses</a>
-                                <a href="#" className="top__title-link">Tops</a>
-                                <a href="#" className="top__title-link">Sweaters/Knits</a>
-                                <a href="#" className="top__title-link">Jackets/Coats</a>
-                                <a href="#" className="top__title-link">Blazers</a>
-                                <a href="#" className="top__title-link">Denim</a>
-                                <a href="#" className="top__title-link">Leggings/Pants</a>
-                                <a href="#" className="top__title-link">Skirts/Shorts</a>
-                                <a href="#" className="top__title-link">Accessories </a>
+                                {kidsCollection.map(item =>
+                                    <Link to="#" className="top__title-link">{item}</Link>
+                                )}
                             </div>
                         </div>
                     </li>
@@ -176,20 +130,15 @@ export const NavigationMenu = () => {
                         <div className="top__box">
                             <div className="top__item">
                                 <h3 className="top__title">Accoseriese</h3>
-                                <a href="#" className="top__title-link">Dresses</a>
-                                <a href="#" className="top__title-link">Tops</a>
-                                <a href="#" className="top__title-link">Sweaters/Knits</a>
-                                <a href="#" className="top__title-link">Jackets/Coats</a>
-                                <a href="#" className="top__title-link">Blazers</a>
-                                <a href="#" className="top__title-link">Denim</a>
+                                {accoserieseCollection.map(item =>
+                                    <Link to="#" className="top__title-link">{item}</Link>
+                                )}
                             </div>
                             <div className="top__item">
                                 <h3 className="top__title">Accoseriese</h3>
-                                <a href="#" className="top__title-link">Dresses</a>
-                                <a href="#" className="top__title-link">Tops</a>
-                                <a href="#" className="top__title-link">Sweaters/Knits</a>
-                                <a href="#" className="top__title-link">Jackets/Coats</a>
-                                <a href="#" className="top__title-link">Blazers</a>
+                                {accoserieseCollection.map(item =>
+                                    <Link to="#" className="top__title-link">{item}</Link>
+                                )}
                             </div>
                         </div>
                     </li>
@@ -198,39 +147,21 @@ export const NavigationMenu = () => {
                         <div className="top__box">
                             <div className="top__item">
                                 <h3 className="top__title">Featured</h3>
-                                <a href="#" className="top__title-link">Dresses</a>
-                                <a href="#" className="top__title-link">Tops</a>
-                                <a href="#" className="top__title-link">Sweaters/Knits</a>
-                                <a href="#" className="top__title-link">Jackets/Coats</a>
-                                <a href="#" className="top__title-link">Blazers</a>
-                                <a href="#" className="top__title-link">Denim</a>
-                                <a href="#" className="top__title-link">Leggings/Pants</a>
-                                <a href="#" className="top__title-link">Skirts/Shorts</a>
-                                <a href="#" className="top__title-link">Accessories </a>
+                                {homeCollection.map(item =>
+                                    <Link to="#" className="top__title-link">{item}</Link>
+                                )}
                             </div>
                             <div className="top__item">
                                 <h3 className="top__title">Featured</h3>
-                                <a href="#" className="top__title-link">Dresses</a>
-                                <a href="#" className="top__title-link">Tops</a>
-                                <a href="#" className="top__title-link">Sweaters/Knits</a>
-                                <a href="#" className="top__title-link">Jackets/Coats</a>
-                                <a href="#" className="top__title-link">Blazers</a>
-                                <a href="#" className="top__title-link">Denim</a>
-                                <a href="#" className="top__title-link">Leggings/Pants</a>
-                                <a href="#" className="top__title-link">Skirts/Shorts</a>
-                                <a href="#" className="top__title-link">Accessories </a>
+                                {homeCollection.map(item =>
+                                    <Link to="#" className="top__title-link">{item}</Link>
+                                )}
                             </div>
                             <div className="top__item">
                                 <h3 className="top__title">Featured</h3>
-                                <a href="#" className="top__title-link">Dresses</a>
-                                <a href="#" className="top__title-link">Tops</a>
-                                <a href="#" className="top__title-link">Sweaters/Knits</a>
-                                <a href="#" className="top__title-link">Jackets/Coats</a>
-                                <a href="#" className="top__title-link">Blazers</a>
-                                <a href="#" className="top__title-link">Denim</a>
-                                <a href="#" className="top__title-link">Leggings/Pants</a>
-                                <a href="#" className="top__title-link">Skirts/Shorts</a>
-                                <a href="#" className="top__title-link">Accessories </a>
+                                {homeCollection.map(item =>
+                                    <Link to="#" className="top__title-link">{item}</Link>
+                                )}
                             </div>
                         </div>
                     </li>
@@ -239,51 +170,27 @@ export const NavigationMenu = () => {
                         <div className="top__box">
                             <div className="top__item">
                                 <h3 className="top__title">Hot Deals</h3>
-                                <a href="#" className="top__title-link">Dresses</a>
-                                <a href="#" className="top__title-link">Tops</a>
-                                <a href="#" className="top__title-link">Sweaters/Knits</a>
-                                <a href="#" className="top__title-link">Jackets/Coats</a>
-                                <a href="#" className="top__title-link">Blazers</a>
-                                <a href="#" className="top__title-link">Denim</a>
-                                <a href="#" className="top__title-link">Leggings/Pants</a>
-                                <a href="#" className="top__title-link">Skirts/Shorts</a>
-                                <a href="#" className="top__title-link">Accessories </a>
+                                {homeCollection.map(item =>
+                                    <Link to="#" className="top__title-link">{item}</Link>
+                                )}
                             </div>
                             <div className="top__item">
                                 <h3 className="top__title">Hot Deals</h3>
-                                <a href="#" className="top__title-link">Dresses</a>
-                                <a href="#" className="top__title-link">Tops</a>
-                                <a href="#" className="top__title-link">Sweaters/Knits</a>
-                                <a href="#" className="top__title-link">Jackets/Coats</a>
-                                <a href="#" className="top__title-link">Blazers</a>
-                                <a href="#" className="top__title-link">Denim</a>
-                                <a href="#" className="top__title-link">Leggings/Pants</a>
-                                <a href="#" className="top__title-link">Skirts/Shorts</a>
-                                <a href="#" className="top__title-link">Accessories </a>
+                                {homeCollection.map(item =>
+                                    <Link to="#" className="top__title-link">{item}</Link>
+                                )}
                             </div>
                             <div className="top__item">
                                 <h3 className="top__title">Hot Deals</h3>
-                                <a href="#" className="top__title-link">Dresses</a>
-                                <a href="#" className="top__title-link">Tops</a>
-                                <a href="#" className="top__title-link">Sweaters/Knits</a>
-                                <a href="#" className="top__title-link">Jackets/Coats</a>
-                                <a href="#" className="top__title-link">Blazers</a>
-                                <a href="#" className="top__title-link">Denim</a>
-                                <a href="#" className="top__title-link">Leggings/Pants</a>
-                                <a href="#" className="top__title-link">Skirts/Shorts</a>
-                                <a href="#" className="top__title-link">Accessories </a>
+                                {homeCollection.map(item =>
+                                    <Link to="#" className="top__title-link">{item}</Link>
+                                )}
                             </div>
                             <div className="top__item">
                                 <h3 className="top__title">Hot Deals</h3>
-                                <a href="#" className="top__title-link">Dresses</a>
-                                <a href="#" className="top__title-link">Tops</a>
-                                <a href="#" className="top__title-link">Sweaters/Knits</a>
-                                <a href="#" className="top__title-link">Jackets/Coats</a>
-                                <a href="#" className="top__title-link">Blazers</a>
-                                <a href="#" className="top__title-link">Denim</a>
-                                <a href="#" className="top__title-link">Leggings/Pants</a>
-                                <a href="#" className="top__title-link">Skirts/Shorts</a>
-                                <a href="#" className="top__title-link">Accessories </a>
+                                {homeCollection.map(item =>
+                                    <Link to="#" className="top__title-link">{item}</Link>
+                                )}
                             </div>
                         </div>
                     </li>

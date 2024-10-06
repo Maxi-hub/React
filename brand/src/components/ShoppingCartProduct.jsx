@@ -50,7 +50,6 @@ export const ShoppingCartProduct = ({ onGrandTotalChange }) => {
         for (let key in products) {
             total = total + products[key].amount;
         }
-        console.log(total);
         setGrandTotal(total);
     };
 
