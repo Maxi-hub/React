@@ -29,10 +29,10 @@ React
 Material-UI
 
 
-## Установка зависимостей / Project setup, Installation^
+## Установка зависимостей / Project setup, Installation
 
 Склонируйте репозиторий / Clone the repository:
-git clone https://github.com/Maxi-hub/React.git
-cd React/material-ui
-npm install
-npm start
+* git clone https://github.com/Maxi-hub/React.git
+* cd React/material-ui
+* npm install
+* npm start
