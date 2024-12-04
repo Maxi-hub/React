@@ -46,7 +46,7 @@ function TemperatureConverter() {
                     onChange={updatedegreeCelsius}
                 />
                 <Button variant="contained" color="success" className="buttons" onClick={convertToFahrenheit}>
-                    Convert to Fahrenheit
+                    перевести в градусы Фаренгейта
                 </Button>
             </div>
             <div className="input-box">
@@ -57,7 +57,7 @@ function TemperatureConverter() {
                     onChange={updatedegreeFahrenheit}
                 />
                 <Button variant="outlined" color="success" className="buttons" onClick={convertToCelsius}>
-                    Convert to Celsius
+                    перевести в градусы Цельсия
                 </Button>
             </div>
             <p>{text}</p>

@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <TemperatureConverter />
-      <hr style={{ width: "100%", border: `1px solid green`}} ></hr>
+      <hr style={{ width: "60%", border: `1px solid green`}} ></hr>
       <TodoList />
     </div >
   );

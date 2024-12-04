@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   margin-top: 42px;
-  margin-bottom: 50px;
+  width: 600px;
 }
 
 .input-box {
@@ -17,6 +17,6 @@
   display: flex;
   gap: 20px;
   margin-top: 20px;
-  width: 300px;
+  width: 250px;
 }
 

@@ -15,6 +15,7 @@ export const TodoList = () => {
     const [text, setText] = useState('');
     const [list, setList] = useState([]);
     const [checked, setChecked] = React.useState([0]);
+    const [error, setError] = useState(false);
 
     const updateText = (e) => {
         setText(e.target.value);
@@ -22,9 +23,11 @@ export const TodoList = () => {
 
     const updateList = () => {
         if (text.trim() === '') {
+            setError(true);
             return;
         }
 
+        setError(false);
         const newList = [...list, text];
         setList(newList);
         setText('');
@@ -50,38 +53,49 @@ export const TodoList = () => {
     return (
         <div className='todoList-box'>
             <Box sx={{ width: 500, maxWidth: '100%' }}>
-                <TextField fullWidth id="outlined-basic" variant="outlined" placeholder='Введите задачу' onChange={updateText} />
+                <TextField fullWidth
+                    value={text}
+                    error={error}
+                    helperText={error ? 'Задача не была введена' : ''}
+                    id="outlined-basic"
+                    variant="outlined"
+                    placeholder='Введите задачу'
+                    onChange={updateText} />
             </Box>
             <Button color="secondary" onClick={updateList}>Добавить задачу в список</Button>
-            <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
-                {list.map(value => {
-                    const labelId = `checkbox-list-label-${value}`;
-                    return (
-                        <ListItem
-                            key={value}
-                            secondaryAction={
-                                <IconButton aria-label="delete" onClick={() => deleteText(value)}>
-                                    <DeleteIcon />
-                                </IconButton>
-                            }
-                            disablePadding
-                        >
-                            <ListItemButton role={undefined} onClick={handleToggle(value)} dense>
-                                <ListItemIcon>
-                                    <Checkbox
-                                        edge="start"
-                                        checked={checked.indexOf(value) !== -1}
-                                        tabIndex={-1}
-                                        disableRipple
-                                        inputProps={{ 'aria-labelledby': labelId }}
-                                    />
-                                </ListItemIcon>
-                                <ListItemText id={labelId} primary={value} />
-                            </ListItemButton>
-                        </ListItem>
-                    );
-                })}
-            </List>
+            { error
+                ? <h1>Задача не была введена!</h1>
+                : <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+                    {list.map(value => {
+                        const labelId = `checkbox-list-label-${value}`;
+                        return (
+                            <ListItem
+                                key={value}
+                                secondaryAction={
+                                    <IconButton aria-label="delete" onClick={() => deleteText(value)}>
+                                        <DeleteIcon />
+                                    </IconButton>
+                                }
+                                disablePadding
+                            >
+                                <ListItemButton role={undefined} onClick={handleToggle(value)} dense>
+                                    <ListItemIcon>
+                                        <Checkbox
+                                            edge="start"
+                                            checked={checked.indexOf(value) !== -1}
+                                            tabIndex={-1}
+                                            disableRipple
+                                            inputProps={{ 'aria-labelledby': labelId }}
+                                        />
+                                    </ListItemIcon>
+                                    <ListItemText id={labelId} primary={value} />
+                                </ListItemButton>
+                            </ListItem>
+                        );
+                    })}
+                </List>
+            }
+
         </div>
     )
 }

@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# Название проекта / Project Title
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Конвертер температур и список задач / temperature converter and tasks list.
 
-## Available Scripts
 
-In the project directory, you can run:
+## Краткое описание проекта / Brief description of the project
 
-### `npm start`
+Конвертер температур и добавление списка задач реализованы с использованием библиотеки React Material UI.
+Основной упор сделан на использование компонентов библиотеки Material UI, в связи с чем визуальная часть выполнена просто.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The temperature converter and the addition of a task list are implemented using the React Material UI library.
+The main focus is on the use of the components of the Material UI library, the visual part is designed simply.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![ Main page ](./readme_assets/1.png)
+![Used application](./readme_assets/2.png)
 
-### `npm test`
+## Описание / Description
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Введите числовое значение температуры в соответствующее поле, чтобы перевести его в градусы Цельсия или Фаренгейта. Полученное значение отображается ниже.
+Введите название задачи в соответствующее поле, и она будет добавлена в список дел. Нажмите на изображение бокса, чтобы отметить ее как выполненную, или удалите ее, нажав на изображение корзины.
 
-### `npm run build`
+Enter a numeric temperature value in the appropriate field to convert it to Celsius or Fahrenheit. The received value is displayed below.
+Enter the name of the task in the appropriate field and it will be added to the to-do list. Click on the image of the box to mark it as completed or delete it by clicking on the image of the basket.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Используемые библиотеки / Libraries used:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+React
+Material-UI
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Установка зависимостей / Project setup, Installation^
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Склонируйте репозиторий / Clone the repository:
+git clone https://github.com/Maxi-hub/React.git
+cd React/material-ui
+npm install
+npm start
