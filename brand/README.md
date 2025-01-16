@@ -56,3 +56,12 @@ BRAND is a multi-page website, an online clothing and accessories store for adul
 * Deleting items from the shopping cart: To delete items, I used the closest() method to find the parent item that needs to be deleted.  
 * React: Applied the framework to improve interaction with the code and improve site performance. 
 **UI/UX improvements:** I focused on creating a user-friendly interface where adding products takes place via a button, and the shopping cart is automatically updated when new products are added. The user can also easily delete an item from the shopping cart. Saving data to localStorage allows you to restore the trash when the page is reloaded, which significantly improves interaction with the application.
+
+
+## Установка зависимостей и запуск проекта / Installing dependencies and launching the project
+
+Склонируйте репозиторий / Clone the repository:
+* git clone https://github.com/Maxi-hub/React.git
+* cd React/brand
+* npm install
+* npm start
