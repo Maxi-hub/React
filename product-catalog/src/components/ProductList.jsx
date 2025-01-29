@@ -19,9 +19,8 @@ const ProductList = () => {
     }
   };
 
-
   return (
-    <div>
+    <div className="productListBox">
       <h2>Product List</h2>
       {products.length === 0 ? (
         <p>No products available.</p>
@@ -29,10 +28,10 @@ const ProductList = () => {
         <ul>
           {products.map((product) => (
             <li key={product.id} id={product.id}>
-              <h3>{product.name}</h3>
-              <p>{product.description}</p>
-              <p>Price: ${product.price}</p>
-              <p>Available: {product.available ? "Yes" : "No"}</p>
+              <p><b>Product name: </b> {product.name}</p>
+              <p><b>Description: </b> {product.description}</p>
+              <p><b>Price: </b> ${product.price}</p>
+              <p><b>Available: </b> {product.available ? "Yes" : "No"}</p>
               <button onClick={() => dispatch(deleteProduct(product.id))}>
                 Delete
               </button>
@@ -54,4 +53,3 @@ const ProductList = () => {
 };
 
 export default ProductList;
-

@@ -1,4 +1,3 @@
-// src/App.jsx
 import AddProduct from "./components/AddProduct";
 import { FoundProductProvider } from "./components/ProductContext";
 import ProductList from "./components/ProductList";

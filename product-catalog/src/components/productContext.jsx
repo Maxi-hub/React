@@ -26,7 +26,7 @@ const FoundProductProvider = ({ children }) => {
 };
 
 FoundProductProvider.propTypes = {
-  children: PropTypes.node.isRequired, // `node` означает, что `children` может быть любой React-компонент
+  children: PropTypes.node.isRequired, 
 };
 
 export { FoundProductProvider, FoundProductContext };
