@@ -4,7 +4,6 @@ import { useEffect } from 'react';
 import { fetchUsers } from './store/userReducer';
 import { fetchUserbyID } from './store/userByIDReducer';
 
-
 function App() {
   const { users, loading, error } = useSelector((state) => state.users);
   const { user, idLoading, idError } = useSelector(state => state.user);
