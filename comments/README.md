@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+# comments list 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Это простое React-приложение, которое позволяет отображать список комментариев с возможностью их удаления. Каждый комментарий представлен текстом, и для каждого есть кнопка для его удаления.
+This is a simple React application that allows you to display a list of comments with the option to delete them. Each comment is represented by text, and for each there is a button to delete it.
 
-## Available Scripts
+## Описание проекта / Description of the project
 
-In the project directory, you can run:
+В приложение применила базовые концепты работы с React:
+- Состояние компонента (State): использовала для хранения списка комментариев и обновления его при удалении.
+- Работа с событиями: кнопка удаления каждого комментария вызывает функцию для удаления из состояния.
+- Компоненты: создала функциональные компоненты, такие как App и CommentsList.
+- Рендеринг списка: применила метод .map() для динамического отображения комментариев.
 
-### `npm start`
+Реализовала функции:
+- по отображению списка комментариев, где список комментариев выводится в виде <li> элементов, вложенных в <ul>.
+- по удалению комментариев, где у каждого комментария создала кнопку для его удаления. При нажатии на кнопку, комментарий удаляется из списка.
+- по динамическому обновлению состояния, поскольку список комментариев обновляется с помощью хука useState и метода setComments, что вызывает перерисовку компонента при изменении данных.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+I applied the basic concepts of working with React to the application.:
+- Component State: used to store a list of comments and update it when deleted.
+- Working with events: The delete button for each comment calls a function to delete from the state.
+- Components: Created functional components such as App and CommentsList.
+- List rendering: applied the .map() method to dynamically display comments.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Implemented the functions:
+- by displaying a list of comments, where the list of comments is displayed as <li> elements nested in <ul>.
+- to delete comments, where each comment has a button to delete it. When you click on the button, the comment is deleted from the list.
+- by dynamically updating the status, since the list of comments is updated using the useState hook and the setComments method, which causes the component to be redrawn when the data changes.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Технологии / Technologies
 
-### `npm run build`
+* React
+* JavaScript
+* CSS
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Установка зависимостей и запуск проекта / Installing dependencies and launching the project
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Склонируйте репозиторий / Clone the repository:
+* git clone https://github.com/Maxi-hub/React.git
+* cd React/comments
+* npm install
+* npm start

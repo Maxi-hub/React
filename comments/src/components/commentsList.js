@@ -10,7 +10,6 @@ function CommentsList() {
 
     const deleteComment = (id) => {
         const newComments = comments.filter(comment => comment.id !== id);
-        console.log(newComments);
         setComments(newComments);
     }
 
