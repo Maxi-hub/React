@@ -1,22 +1,26 @@
+ul {
+    margin-top: 50px;
+}
+
 .content {
     white-space: pre-wrap;
-    /* list-style: none; */
+    margin-bottom: 10px;
 }
 
 .container {
     display: flex;
     gap: 30px;
     padding: 15px;
-    background: lightpink;
+    background: #343c7e;
 }
 
 .link {
     text-decoration: none;
-    color: cornflowerblue;
+    color: #7aa9ff;
 }
 
 .active {
-    color: rgb(114, 48, 114);
+    color: rgb(229 136 229);
 }
 
 .itemLink {
@@ -26,13 +30,18 @@
 
 
 .textBox {
-    background: blanchedalmond;
+    background: #cdd3ff;
     padding: 20px 15px 15px;
+    height: 100vh;
 }
 
 .button {
     padding: 10px;
-    background: #ffa50066;
-    border: 1px solid #eca704;
+    background: #4a00ff6b;
+    border: 1px solid #b083ae;
     border-radius: 9px;
+}
+
+.goBack {
+    color: #2169ff;
 }
