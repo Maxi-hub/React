@@ -1,3 +1,5 @@
+// createSlice является современной альтернативой устаревшему switch/case из themeReducer
+
 import { createSlice } from '@reduxjs/toolkit';
 
 const themeSlice = createSlice({

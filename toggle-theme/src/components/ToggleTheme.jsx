@@ -1,4 +1,3 @@
-// использование themeReducer из '../store/themeReducer'
 // import React from 'react';
 // import { useDispatch, useSelector } from 'react-redux';
 // import { TOGGLE_THEME } from '../store/themeReducer';
@@ -21,8 +20,6 @@
 // };
 
 
-// createSlice является современной альтернативой устаревшему switch/case из themeReducer
-// использование с createSlice из '../store/themeSlice'
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleTheme } from '../store/themeSlice';

@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+# Смена темы в приложении — React + Redux / Changing the theme in the application — React + Redux
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+В этом проекте я реализовала функциональность смены темы с использованием React и Redux. Приложение позволяет переключать тему между светлой и темной, и я использовала Redux для управления состоянием темы.
+In this project, I implemented the theme change functionality using React and Redux. The application allows you to switch the theme between light and dark, and I used Redux to control the theme status.
 
-## Available Scripts
 
-In the project directory, you can run:
+## Описание проекта / Description of the project
 
-### `npm start`
+Использование Redux для управления состоянием темы:
+- Я настроила Redux для хранения текущей темы. В нем хранится строка с состоянием, которое может быть либо "light", либо "dark".
+- В редьюсере я определила логику переключения между темами с помощью экшн-креатора toggleTheme. Это позволяет мне менять тему с light на dark и наоборот при каждом клике по кнопке.
+- В компоненте ToggleTheme я использовала хуки useSelector для получения текущей темы из Redux и useDispatch для отправки экшена по нажатию на кнопку. Компонент отображает текущую тему и позволяет пользователю ее менять.
+- В зависимости от состояния темы я динамически добавляю классы в корневой элемент приложения. Это позволяет изменять внешний вид всего приложения при переключении темы.
+- Я добавила кнопку для переключения темы и отображения текущего состояния темы. При каждом нажатии на кнопку меняется состояние темы в Redux, и это отражается на внешнем виде приложения.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Using Redux to manage theme status:
+- I have configured Redux to store the current theme. It stores a string with a state that can be either "light" or "dark".
+- In the redeser, I defined the logic of switching between topics using the toggleTheme action creator. This allows me to change the theme from light to dark and vice versa every time I click on a button.
+ In the ToggleTheme component, I used user Selector cookies to get the current theme from Redux and useDispatch to send an action when a button is clicked. The component displays the current theme and allows the user to change it.
+- Depending on the state of the theme, I dynamically add classes to the root element of the application. This allows you to change the appearance of the entire application when switching themes.
+- I added a button to switch the theme and display the current status of the theme. Each time you click on the button, the status of the theme in Redux changes, and this is reflected in the appearance of the application.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Технологии / Technologies
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* React: Для создания интерфейса и управления состоянием компонента.
+* Redux: Для централизованного хранения состояния темы. Я использовала configureStore для настройки хранилища и createSlice для упрощения работы с экшнами и редьюсерами.
+* CSS: Для стилизации компонентов в зависимости от темы (светлая или темная).
 
-### `npm run build`
+* React: To create an interface and manage the state of a component.
+* Redux: For centralized storage of theme status. I used configurator to set up the storage and create Slice to simplify working with actions and redirectors.
+* CSS: To style the components depending on the theme (light or dark).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Установка зависимостей и запуск проекта / Installing dependencies and launching the project
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Склонируйте репозиторий / Clone the repository:
+* git clone https://github.com/Maxi-hub/React.git
+* cd React/toggle-theme
+* npm install
+* npm start
