@@ -3,15 +3,20 @@ import './style.scss';
 import { Subscribe } from './components/Subscribe';
 import { Information } from './components/Information';
 import { Footer } from './components/Footer';
-import { HeadingCenter } from './components/HeadingCenter';
 import { useEffect, useState } from 'react';
 import { NavigationMenu } from './components/NavigationMenu';
-const images = require.context('./img', true, /\.(jpg|png|svg)$/);
+import { HeadingCenter } from './components/header/HeadingCenter';
+import { CollectionItem } from './components/CollectionItem';
+// const images = require.context('./img', true, /\.(jpg|png|svg)$/);
 
 function App() {
+  const offerBox = [
+    { imgSrc: "img/delivery.png", alt: "Грузовик", title: "Free Delivery", text: "Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models." },
+    { imgSrc: "img/sales.png", alt: "Знак поцента в круге", title: "Sales & discounts", text: "Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models." },
+    { imgSrc: "img/assurance.png", alt: "Корона", title: "Quality assurance", text: "Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models." },
+  ];
 
   const [data, setData] = useState([]);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     const url = './data.json';
@@ -26,7 +31,6 @@ function App() {
         setData(res);
       } catch (error) {
         console.error('Error:', error);
-        setError(error.message);
       }
     }
     fetchData();
@@ -56,14 +60,14 @@ function App() {
             headingBucketBox.insertAdjacentHTML('afterbegin', `
               <div class="heading__bucket-items" data-id="${selectedProduct.id}">
                 <Link to="/single_page">
-                  <img class="heading__bucket-item" src=${images(`./${selectedProduct.img}`)} alt=""/>
+                  <img class="heading__bucket-item" src=${`img/${selectedProduct.img}`} alt=""/>
                 </Link>
                 <div class="heading__bucket-text">
                   <h5 class="heading__bucket-title">${selectedProduct.title}</h5>
-                  <img class="heading__bucket-stars" src=${images(`./stars.png`)} alt=""></img>
+                  <img class="heading__bucket-stars" src='img/stars.png' alt=""></img>
                   <p class="heading__bucket-price">${count} x ${selectedProduct.price}</p>
                 </div>
-                <img class="heading__bucket-close" src=${images(`./button_close.png`)} alt=""></img>
+                <img class="heading__bucket-close" src='img/buttonClose.png' alt=""></img>
               </div>
               `
             );
@@ -98,26 +102,10 @@ function App() {
         </div>
       </div>
       <div className="collection center">
-        <div className="collection__men">
-          <div className="collection__men-deal">
-            <p><span className="collection__men-offer">HOT DEAL</span><br />FOR MEN</p>
-          </div>
-        </div>
-        <div className="collection__accesories">
-          <div className="collection__accesories-deal">
-            <p><span className="collection__accesories-offer">LUXIROUS & TRENDY</span><br />ACCESORIES</p>
-          </div>
-        </div>
-        <div className="collection__women">
-          <div className="collection__women-deal">
-            <p><span className="collection__women-offer">30% OFFER</span><br /> WOMEN</p>
-          </div>
-        </div>
-        <div className="collection__kids">
-          <div className="collection__kids-deal">
-            <p><span className="collection__kids-offer">NEW ARRIVALS</span><br />FOR KIDS</p>
-          </div>
-        </div>
+        <CollectionItem className="collection__men" offer="HOT DEAL" label="FOR MEN"/>
+        <CollectionItem className="collection__accesories" offer="LUXIROUS & TRENDY" label="ACCESORIES"/>
+        <CollectionItem className="collection__women" offer="30% OFFER" label="WOMEN"/>
+        <CollectionItem className="collection__kids" offer="NEW ARRIVALS" label="FOR KIDS"/>
       </div>
       <section className="closes center">
         <h1 className="closes__title">Fetured Items</h1>
@@ -126,7 +114,7 @@ function App() {
           {data.map((el, index) => (
             <div key={index} className="closes__items">
               <Link to='/product' className="closes__link">
-                <img className="closes__items-img" src={images(`./${el.img}`)} alt="" />
+                <img className="closes__items-img" src={`img/${el.img}`} alt="" />
                 <div className="closes__items-text">
                   <p className="closes__items-title">{el.title}</p>
                   <p className="closes__price">${el.price}</p>
@@ -142,7 +130,7 @@ function App() {
                       bucketElement.scrollIntoView({ behavior: 'smooth' });
                     }
                   }}>
-                  <img className="add-img" src={images('./bucket_white.png')} alt="" />
+                  <img className="add-img" src='img/bucketWhite.png' alt="" />
                   <p className="add-txt">Add to Cart</p>
                 </Link>
               </div>
@@ -151,7 +139,7 @@ function App() {
         </div>
         <Link className="closes__button" to="/product">
           Browse All Product
-          <img className="closes__button-img" src={images('./arrow_white_right.png')} alt="" />
+          <img className="closes__button-img" src='img/arrowWhiteRight.png' alt="" />
         </Link>
       </section>
       <div className="offer center">
@@ -162,24 +150,13 @@ function App() {
           </div>
         </div>
         <div className="offer__box">
-          <article className="offer__box-items">
-            <img src={images('./delivery.png')} alt="" />
-            <h4 className="offer__title">Free Delivery</h4>
-            <p className="offer__text">Worldwide delivery on all. Authorit tively morph next-generation innov tion with
-              extensive models.</p>
-          </article>
-          <article className="offer__box-items">
-            <img src={images('./sales.png')} alt="" />
-            <h4 className="offer__title">Sales & discounts</h4>
-            <p className="offer__text">Worldwide delivery on all. Authorit tively morph next-generation innov tion with
-              extensive models.</p>
-          </article>
-          <article className="offer__box-items">
-            <img src={images('./assurance.png')} alt="" />
-            <h4 className="offer__title">Quality assurance</h4>
-            <p className="offer__text">Worldwide delivery on all. Authorit tively morph next-generation innov tion with
-              extensive models.</p>
-          </article>
+          {offerBox.map((item, index) => (
+            <article key={index} className="offer__box-items">
+              <img src={item.imgSrc} alt="" />
+              <h4 className="offer__title">{item.title}</h4>
+              <p className="offer__text">{item.text}</p>
+            </article>
+          ))}
         </div>
       </div>
       <Subscribe />

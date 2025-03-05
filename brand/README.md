@@ -20,7 +20,7 @@ BRAND is a multi-page website, an online clothing and accessories store for adul
 ![Header and title](./readme_assets/2.png)
 ![product page](./readme_assets/5.png)
 
-3. **Выпадающее меню**: Реализовала выпадающее меню, которое обеспечивает удобную навигацию по сайту и улучшает пользовательский опыт
+3. **Выпадающее меню**: Реализовала выпадающее меню, которое обеспечивает удобную навигацию по сайту и улучшает пользовательский опыт.
 **Drop-down menu**: Implemented a drop-down menu that provides easy site navigation and enhances the user experience.
 ![drop-down menu](./readme_assets/4.png) 
 

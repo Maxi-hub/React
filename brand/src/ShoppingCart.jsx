@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
 import { Footer } from './components/Footer';
-import { HeadingCenter } from './components/HeadingCenter';
 import { Information } from './components/Information';
 import { Subscribe } from './components/Subscribe';
 import './style.scss';
@@ -9,7 +8,8 @@ import { BreadCrumbs } from './components/BreadCrumbs';
 import { NavigationMenu } from './components/NavigationMenu';
 import { Link } from 'react-router-dom';
 import { ShoppingCartProduct } from './components/ShoppingCartProduct';
-const images = require.context('./img', true, /\.(jpg|png|svg)$/);
+import { HeadingCenter } from './components/header/HeadingCenter';
+
 
 export const ShoppingCart = () => {
     const shoppingCartRef = useRef();
@@ -28,7 +28,7 @@ export const ShoppingCart = () => {
                         <div className="product">
                             <div className="product__left">
                                 <Link to='/product'> 
-                                    <img src=${images(`./${obj.img}`)} alt=""/> 
+                                    <img src=${`img/${obj.img}`} alt=""/> 
                                 </Link>
                                 <div className="product__details">
                                     <h4 className="product__title">${obj.title}</h4>
@@ -41,7 +41,7 @@ export const ShoppingCart = () => {
                                 <input className="product__quantity" type="number" name="quantity" id="quantity" min="1" placeholder="1"/>
                                 <p className="product__text">FREE</p>
                                 <p className="product__text">$300</p>
-                                <img className="product__info-img" src=${images('./button_close.png')} alt=""/>
+                                <img className="product__info-img" src="img/buttonClose.png" alt=""/>
                             </div>
                         </div>`);
                 }
@@ -50,14 +50,14 @@ export const ShoppingCart = () => {
                     headingBucketBox.insertAdjacentHTML('afterbegin', `
                         <div className="heading__bucket-items" data-id="${obj.id}">
                             <Link to='/single_page'>    
-                                <img className="heading__bucket-item" src=${images(`./${obj.img}`)} alt="" />
+                                <img className="heading__bucket-item" src=${`img/${obj.img}`} alt="" />
                             </Link>
                             <div className="heading__bucket-text">
                                 <h5 className="heading__bucket-title">${obj.title}</h5>
-                                <img className="heading__bucket-stars" src=${images('./stars.png')} alt=""/>
+                                <img className="heading__bucket-stars" src="img/stars.png" alt=""/>
                                 <p className="heading__bucket-price">${obj.count} x $${obj.price}</p>
                             </div>
-                            <img className="heading__bucket-close" src=${images('./button_close.png')} alt=""/>
+                            <img className="heading__bucket-close" src="img/buttonClose.png" alt=""/>
                         </div>
                         `
                     );

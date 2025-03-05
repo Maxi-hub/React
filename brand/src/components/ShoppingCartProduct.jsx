@@ -1,22 +1,22 @@
 import { Link } from 'react-router-dom';
 import '../style.scss';
 import { useEffect, useState } from 'react';
-const images = require.context('../img', true, /\.(jpg|png|svg)$/);
+
 const fotos = [
     {
-        'img': 'man1_cart.png',
+        'img': 'man1Cart.png',
         'title': 'MANGO PEOPLE T-SHIRT',
         'price': 150,
     },
     {
-        'img': 'man2_cart.png',
+        'img': 'man2Cart.png',
         'title': 'Mango People T-shirt',
         'color': 'Green',
         'size': 'Xll',
         'price': 250,
     },
     {
-        'img': 'man3_cart.png',
+        'img': 'man3Cart.png',
         'title': 'Mango People T-shirt',
         'color': 'Blue',
         'size': 'Xll',
@@ -73,7 +73,7 @@ export const ShoppingCartProduct = ({ onGrandTotalChange }) => {
         fotos.map((item, index) => (
             <div className="product">
                 <div className="product__left">
-                    <Link to='/product'><img src={images(`./${item.img}`)} alt="" /></Link>
+                    <Link to='/product'><img src={`img/${item.img}`} alt="" /></Link>
                     <div className="product__details" >
                         <h4 className="product__title">{item.title}</h4>
                         <p className="product__text">Color: <span>{item.color}</span></p>
@@ -91,7 +91,7 @@ export const ShoppingCartProduct = ({ onGrandTotalChange }) => {
                         placeholder="1" />
                     <p className="product__text">FREE</p>
                     <p className="product__text">${products[index] ? products[index].amount : item.price}</p>
-                    <img className="product__info-img" src={images('./button_close.png')} alt="" />
+                    <img className="product__info-img" src='img/buttonClose.png' alt="" />
                 </div>
             </div>
         ))

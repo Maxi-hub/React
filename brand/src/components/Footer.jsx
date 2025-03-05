@@ -1,37 +1,28 @@
+import { Link } from 'react-router-dom';
 import '../style.scss';
-const images = require.context('../img', true, /\.(jpg|png|svg)$/);
 
 export const Footer = () => {
+    const icons = [
+        { link: "https://www.facebook.com/", src: 'img/facebook.svg', alt: "Логотип Facebook" },
+        { link: "https://www.twitter.com", src: 'img/twitter.svg', alt: "Логотип Twitter" },
+        { link: "https://www.instagram.com", src: 'img/instagram.svg', alt: "Логотип Instagram" },
+        { link: "https://ru.pinterest.com/", src: 'img/pinterest.svg', alt: "Логотип Pinterest" },
+        { link: "https://plus.google.com", src: 'img/googlePlus.svg', alt: "Логотип Google" },
+    ];
+
     return (
         <footer className="footer center">
             <p className="footer__text"> &copy;2022 Brand All Rights Reserved.</p>
             <div className="footer__social">
-                <div className="footer__icons">
-                    <a href="https://www.facebook.com/" target="_blank">
-                        <img className="footer__icons-img" src={images('./Facebook.svg')} alt="" />
-                    </a>
-                </div>
-                <div className="footer__icons">
-                    <a href="https://www.twitter.com" target="_blank">
-                        <img className="footer__icons-img" src={images('./twitter.svg')} alt="" />
-                    </a>
-                </div>
-                <div className="footer__icons">
-                    <a href="https://www.instagram.com" target="_blank">
-                        <img className="footer__icons-img" src={images('./instagram.svg')} alt="" />
-                    </a>
-                </div>
-                <div className="footer__icons">
-                    <a href="https://ru.pinterest.com/" target="_blank">
-                        <img className="footer__icons-img" src={images('./pinterest.svg')} alt="" />
-
-                    </a>
-                </div>
-                <div className="footer__icons">
-                    <a href="https://plus.google.com" target="_blank">
-                        <img className="footer__icons-img" width="22px" height="22px" src={images('./google-plus.svg')} alt="" />
-                    </a>
-                </div>
+                {
+                    icons.map((item, index) => (
+                        <div key={index} className="footer__icons">
+                            <Link to={item.link} target="_blank">
+                                <img className="footer__icons-img" src={item.src} alt={item.alt} />
+                            </Link>
+                        </div>
+                    ))
+                }
             </div>
         </footer>
     )

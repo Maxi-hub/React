@@ -1,6 +1,5 @@
 import { Helmet } from 'react-helmet';
 import './style.scss';
-import { HeadingCenter } from './components/HeadingCenter';
 import { Subscribe } from './components/Subscribe';
 import { Information } from './components/Information';
 import { Footer } from './components/Footer';
@@ -9,8 +8,8 @@ import { NavigationMenu } from './components/NavigationMenu';
 import { ClosesItems } from './components/ClosesItems';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { HeadingCenter } from './components/header/HeadingCenter';
 
-const images = require.context('./img', true, /\.(jpg|png|svg)$/);
 const categoryList = ['Accessories', 'Bags', 'Denim', 'Hoodies & Sweatshirts', 'Jackets & Coats', 'Polos', 'Shirts', 'Shoes', 'Sweaters & Knits', 'T-shirts', 'Tanks'];
 
 export const Product = () => {
@@ -38,6 +37,7 @@ export const Product = () => {
             <div className="central center">
                 <div className="leftPosition">
                     <div className="filter__content">
+                        
                         <details className="filter__item" open>
                             <summary className="filter__head">CATEGORY</summary>
                             <div className="filter__link-box">
@@ -62,6 +62,7 @@ export const Product = () => {
                                 )}
                             </div>
                         </details>
+
                     </div>
                 </div>
                 <div className="rightPosition">
@@ -69,12 +70,9 @@ export const Product = () => {
                         <div className="sort__details">
                             <p className="sort__heading">TRANDING NOW</p>
                             <div className="sort__box">
-                                <Link to="#" className="sort__link">Bohemian</Link>
-                                <Link to="#" className="sort__link">Floral</Link>
-                                <Link to="#" className="sort__link">Lace</Link>
-                                <Link to="#" className="sort__link">Floral</Link>
-                                <Link to="#" className="sort__link">Lace</Link>
-                                <Link to="#" className="sort__link">Bohemian</Link>
+                                {["Bohemian", "Floral", "Lace", "Floral", "Lace", "Bohemian"].map((item, index) => (
+                                    <Link key={index} to="#" className="sort__link">{item}</Link>
+                                ))}
                             </div>
                         </div>
                         <div className="sort__details">
@@ -157,14 +155,14 @@ export const Product = () => {
                             <div className="sorting__title">Sort By</div>
                             <div className="sorting__sort">
                                 <p>Size</p>
-                                <img src={images('./arrow_grey_down.png')} alt="" />
+                                <img src='img/arrowGreyDown.png' alt="" />
                             </div>
                         </div>
                         <div className="sorting__count">
                             <div className="sorting__title">Show</div>
                             <div className="sorting__sort">
                                 <p>09</p>
-                                <img src={images('./arrow_grey_down.png')} alt="" />
+                                <img src='img/arrowGreyDown.png' alt="" />
                             </div>
                         </div>
                     </div>
@@ -173,7 +171,7 @@ export const Product = () => {
                     </div>
                     <div className="flipping">
                         <nav className="flipping__number">
-                            <img src={images('./arrow_grey_left.png')} alt="" />
+                            <img src='img/arrowGreyLeft.png' alt="" />
                             <ul>
                                 <li className="flipping__list">1</li>
                                 <li className="flipping__list">2</li>
@@ -185,31 +183,33 @@ export const Product = () => {
                                 <li className="flipping__list">20</li>
 
                             </ul>
-                            <img src={images('./arrow_pink_right.png')} alt="" />
+                            <img src='img/arrowPinkRight.png' alt="" />
                         </nav>
                         <Link to="#" className="flipping__button">View All</Link>
                     </div>
                 </div>
             </div>
             <div className="conditions center">
+                
                 <div className="conditions__item">
-                    <img src={images('./delivery.png')} alt="" />
+                    <img src="img/delivery.png" alt="" />
                     <h3 className="delivery_title">Free Delivery</h3>
                     <p className="conditions__text">Worldwide delivery on all. Authorit tively morph next-generation innov tion
                         with extensive models.</p>
                 </div>
                 <div className="conditions__item">
-                    <img src={images('./sales.png')} alt="" />
+                    <img src="img/sales.png" alt="" />
                     <h3 className="sales_title">Sales & discounts</h3>
                     <p className="conditions__text">Worldwide delivery on all. Authorit tively morph next-generation innov tion
                         with extensive models.</p>
                 </div>
                 <div className="conditions__item">
-                    <img src={images('./assurance.png')} alt="" />
+                    <img src="img/assurance.png" alt="" />
                     <h3 className="assurance_title">Quality assurance</h3>
                     <p className="conditions__text">Worldwide delivery on all. Authorit tively morph next-generation innov tion
                         with extensive models.</p>
                 </div>
+                
             </div>
             <Subscribe />
             <Information />

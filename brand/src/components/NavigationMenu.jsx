@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import '../style.scss';
-const images = require.context('../img', true, /\.(jpg|png|svg)$/);
+
 const homeCollection = ['Dresses', 'Tops', 'Sweaters/Knits', 'Jackets/Coats', 'Blazers', 'Denim', 'Leggings/Pants', 'Skirts/Shorts', 'Accessories'];
 const menColection = ['Pants', 'Tops', 'Sweaters/Knits', 'Jackets/Coats', 'Blazers', 'Denim', 'Skirts/Shorts', 'Accessories'];
 const womenColection1 = ['Dresses', 'Tops', 'Sweaters/Knits', 'Jackets/Coats', 'Blazers', 'Denim', 'Leggings/Pants', 'Skirts/Shorts', 'Accessories'];
@@ -66,7 +66,7 @@ export const NavigationMenu = () => {
                                 )}
                                 <div className="top__item-ibox">
                                     <Link to="#">
-                                        <img className="top__item-img" src={images('./super_sale.png')} alt="" />
+                                        <img className="top__item-img" src='img/superSale.png' alt="" />
                                         <p className="top__item-pro">Super<br />sale!</p>
                                     </Link>
                                 </div>

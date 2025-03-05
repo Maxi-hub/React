@@ -5,8 +5,8 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Checkout } from './Checkout';
 import { Product } from './Product';
-import { SinglePage } from './SinglePage';
 import { ShoppingCart } from './ShoppingCart';
+import { SinglePage } from './components/singlePage/SinglePage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

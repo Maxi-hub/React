@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import '../style.scss';
 import { useEffect, useState } from 'react';
-const images = require.context('../img', true, /\.(jpg|png|svg)$/);
 
 const fotos = [
     {
@@ -62,6 +61,7 @@ const fotos = [
 
 export const ClosesItems = ({ checkedValues }) => {
     const [newFotos, setNewFotos] = useState(fotos);
+    
     useEffect(() => {
         const filteredFotos = checkedValues.length === 0 ? fotos : fotos.filter(foto => checkedValues.includes(foto.size));
         setNewFotos(filteredFotos);
@@ -71,7 +71,7 @@ export const ClosesItems = ({ checkedValues }) => {
         newFotos.map((item) => (
             <div className="closes__items">
                 <Link className="closes__link" to="/product">
-                    <img className="closes__items-img" src={images(`./${item.img}`)} alt="" />
+                    <img className="closes__items-img" src={(`img/${item.img}`)} alt="" />
                     <div className="closes__items-text">
                         <p className="closes__items-title">{item.title}</p>
                         <p className="closes__price">${item.price}</p>
@@ -87,15 +87,15 @@ export const ClosesItems = ({ checkedValues }) => {
                                 bucketElement.scrollIntoView({ behavior: 'smooth' });
                             }
                         }}>
-                        <img className="add-img" src={images('./bucket_white.png')} alt="" />
+                        <img className="add-img" src='img/bucketWhite.png' alt="" />
                         <p className="add-txt">Add to Cart</p>
                     </Link>
                     <div className="hover-box">
                         <Link to='#' className="refresh">
-                            <img src={images('./arrow_loop.png')} alt="" />
+                            <img src='img/arrowLoop.png' alt="" />
                         </Link>
                         <Link to='#' className="liked">
-                            <img src={images('./heart.png')} alt="" />
+                            <img src='img/heart.png' alt="" />
                         </Link>
                     </div>
                 </div>

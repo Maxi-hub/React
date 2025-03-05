@@ -425,7 +425,7 @@ li {
 }
 .top__content {
   height: 600px;
-  background: url(img/main_image.jpg) center;
+  background: url(../public/img/mainImage.jpg) center;
   background-color: #e8e8e8;
   background-repeat: no-repeat;
 }
@@ -474,7 +474,7 @@ li {
   gap: 20px;
 }
 .collection__men {
-  background-image: url(img/men.jpg);
+  background-image: url(../public/img/men.jpg);
   width: 560px;
   height: 542px;
 }
@@ -495,7 +495,7 @@ li {
   color: #222;
 }
 .collection__women {
-  background-image: url(img/women.jpg);
+  background-image: url(../public/img/women.jpg);
   width: 560px;
   height: 261px;
 }
@@ -512,7 +512,7 @@ li {
   padding-left: 18px;
 }
 .collection__accesories {
-  background-image: url(img/accesories.jpg);
+  background-image: url(../public/img/accesories.jpg);
   width: 560px;
   height: 261px;
 }
@@ -529,7 +529,7 @@ li {
   padding-left: 18px;
 }
 .collection__kids {
-  background-image: url(img/kids.jpg);
+  background-image: url(../public/img/kids.jpg);
   width: 560px;
   height: 542px;
 }
@@ -732,7 +732,7 @@ li {
   margin-bottom: 97px;
 }
 .offer__img {
-  background: url(img/offer.jpg) no-repeat;
+  background: url(../public/img/offer.jpg) no-repeat;
   width: 767px;
   height: 529px;
   font-size: 54px;
@@ -788,7 +788,7 @@ li {
 }
 
 .top-bottom {
-  background: url(img/background_descktop.svg) no-repeat center;
+  background: url(../public/img/backgroundDescktop.svg) no-repeat center;
   height: 438px;
   display: flex;
   gap: 100px;

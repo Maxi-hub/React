@@ -1,13 +1,14 @@
 import { Helmet } from 'react-helmet';
-import { Footer } from './components/Footer';
-import { HeadingCenter } from './components/HeadingCenter';
-import { Information } from './components/Information';
-import { Subscribe } from './components/Subscribe';
-import './style.scss';
+import { Footer } from '../Footer';
+import { Information } from '../Information';
+import { Subscribe } from '../Subscribe';
+import '../../style.scss';
 import { Link } from 'react-router-dom';
-import { BreadCrumbs } from './components/BreadCrumbs';
-import { NavigationMenu } from './components/NavigationMenu';
-const images = require.context('./img', true, /\.(jpg|png|svg)$/);
+import { BreadCrumbs } from '../BreadCrumbs';
+import { NavigationMenu } from '../NavigationMenu';
+import { HeadingCenter } from '../header/HeadingCenter';
+import { SinglePageItems } from './SinglePageItems';
+
 
 export const SinglePage = () => {
     return (
@@ -23,13 +24,13 @@ export const SinglePage = () => {
             <div className="fotos">
                 <div className="fotos__arrow">
                     <Link to="#">
-                        <img className="fotos__img1" src={images('./arrow_whiteleft.png')} alt="" />
+                        <img className="fotos__img1" src='img/arrowWhiteLeft.png' alt="" />
                     </Link>
                 </div>
-                <img className="fotos__img2" src={images('./woman_on_chair.png')} alt="Woman on chair" />
+                <img className="fotos__img2" src='img/womanOnChair.png' alt="Woman on chair" />
                 <div className="fotos__arrow">
                     <Link to="#">
-                        <img className="fotos__img3" src={images('./arrow_whiteright.png')} alt="" />
+                        <img className="fotos__img3" src='img/arrowWhiteRight2.png' alt="" />
                     </Link>
                 </div>
                 <div className="fotos__box center">
@@ -52,7 +53,6 @@ export const SinglePage = () => {
                                     <summary className="filter__sort">
                                         <div className="filter__color-square1"></div>
                                         Red
-                                        <img className="filter__color-arrow" src={images('./arrow_grey_down.png')} alt='' />
                                     </summary>
                                     <div className="filter__sort-box">
                                         <div className="filter__sort-check">
@@ -72,7 +72,7 @@ export const SinglePage = () => {
                                 <p className="filter__title">CHOOSE SIZE</p>
                                 <details className="filter__size">
                                     <summary className="filter__sort sort__new"> XXL
-                                        <img className="filter__color-arrow" src={images('./arrow_grey_down.png')} alt='' />
+                                        <img className="filter__color-arrow" src='img/arrowGreyDown.png' alt='' />
                                     </summary>
                                     <div className="filter__sort-box">
                                         <div className="filter__sort-check">
@@ -100,7 +100,7 @@ export const SinglePage = () => {
                             </div>
                         </div>
                         <Link to="#" className="fotos__button-bucket">
-                            <img className="fotos__button-img" src={images('./bucket_white.png')} alt="" />
+                            <img className="fotos__button-img" src='img/bucketWhite.png' alt="" />
                             <p className="fotos__button-text">Add to Cart</p>
                         </Link>
                     </div>
@@ -109,53 +109,28 @@ export const SinglePage = () => {
             <section className="single-page-items center">
                 <h1 className="single-page-items__title">you may like also</h1>
                 <div className="single-page-items__box">
-                    <div className="single-page-items__item">
-                        <Link to="#">
-                            <div className="single-page-items__img">
-                                <img src={images('./woman1.png')} alt="" />
-                            </div>
-                            <div className="single-page-items__text">
-                                <p className="single-page-items__name">BLAZE LEGGINGS</p>
-                                <div className="single-page-items__block">
-                                    <p className="single-page-items__price">$52.00</p>
-                                    <img src={images('./5stars.png')} alt="" />
-                                </div>
-                            </div>
-                        </Link>
-                    </div>
-                    <div className="single-page-items__item">
-                        <Link to="#">
-                            <div className="single-page-items__img">
-                                <img className="single-page-items__img2" src={images('./woman2.png')} alt="" />
-                            </div>
-                            <div className="single-page-items__text">
-                                <p className="single-page-items__name">ALEXA SWEATER</p>
-                                <p className="single-page-items__price">$52.00</p>
-                            </div>
-                        </Link>
-                    </div>
-                    <div className="single-page-items__item">
-                        <Link to="#">
-                            <div className="single-page-items__img">
-                                <img src={images('./woman3.png')} alt="" />
-                            </div>
-                            <div className="single-page-items__text">
-                                <p className="single-page-items__name">AGNES TOP</p>
-                                <p className="single-page-items__price">$52.00</p>
-                            </div>
-                        </Link>
-                    </div>
-                    <div className="single-page-items__item">
-                        <Link to="#">
-                            <div className="single-page-items__img">
-                                <img src={images('./woman4.png')} alt="" />
-                            </div>
-                            <div className="single-page-items__text">
-                                <p className="single-page-items__name">SYLVA SWEATER</p>
-                                <p className="single-page-items__price">$52.00</p>
-                            </div>
-                        </Link>
-                    </div>
+                    <SinglePageItems
+                        imgSrc="img/woman1.png"
+                        title="BLAZE LEGGINGS"
+                        price="52.00"
+                        starsImg="img/5stars.png"
+                    />
+                    <SinglePageItems
+                        classNameImg="single-page-items__img2"
+                        imgSrc="img/woman2.png"
+                        title="ALEXA SWEATER"
+                        price="52.00"
+                    />
+                    <SinglePageItems
+                        imgSrc="img/woman3.png"
+                        title="AGNES TOP"
+                        price="52.00"
+                    />
+                    <SinglePageItems
+                        imgSrc="img/woman4.png"
+                        title="SYLVA SWEATER"
+                        price="52.00"
+                    />
                 </div>
             </section>
             <Subscribe />
