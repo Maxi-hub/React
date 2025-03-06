@@ -1,21 +1,21 @@
 import { Link } from 'react-router-dom';
 import './style.scss';
-import { Subscribe } from './components/Subscribe';
-import { Information } from './components/Information';
-import { Footer } from './components/Footer';
+import { Subscribe } from './components/subscribe/Subscribe';
+import { Information } from './components/companyInformation/Information';
+import { Footer } from './components/footer/Footer';
 import { useEffect, useState } from 'react';
-import { NavigationMenu } from './components/NavigationMenu';
+import { NavigationMenu } from './components/navigationMenu/NavigationMenu';
 import { HeadingCenter } from './components/header/HeadingCenter';
-import { CollectionItem } from './components/CollectionItem';
+import { CollectionItem } from './components/collection/CollectionItem';
 // const images = require.context('./img', true, /\.(jpg|png|svg)$/);
 
-function App() {
-  const offerBox = [
-    { imgSrc: "img/delivery.png", alt: "Грузовик", title: "Free Delivery", text: "Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models." },
-    { imgSrc: "img/sales.png", alt: "Знак поцента в круге", title: "Sales & discounts", text: "Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models." },
-    { imgSrc: "img/assurance.png", alt: "Корона", title: "Quality assurance", text: "Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models." },
-  ];
+const offerBox = [
+  { imgSrc: "img/delivery.png", alt: "Грузовик", title: "Free Delivery", text: "Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models." },
+  { imgSrc: "img/sales.png", alt: "Знак поцента в круге", title: "Sales & discounts", text: "Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models." },
+  { imgSrc: "img/assurance.png", alt: "Корона", title: "Quality assurance", text: "Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models." },
+];
 
+function App() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -27,7 +27,6 @@ function App() {
           throw new Error('Something went wrong. Try again!')
         }
         const res = await response.json();
-        console.log('Data:', res);
         setData(res);
       } catch (error) {
         console.error('Error:', error);
@@ -102,10 +101,10 @@ function App() {
         </div>
       </div>
       <div className="collection center">
-        <CollectionItem className="collection__men" offer="HOT DEAL" label="FOR MEN"/>
-        <CollectionItem className="collection__accesories" offer="LUXIROUS & TRENDY" label="ACCESORIES"/>
-        <CollectionItem className="collection__women" offer="30% OFFER" label="WOMEN"/>
-        <CollectionItem className="collection__kids" offer="NEW ARRIVALS" label="FOR KIDS"/>
+        <CollectionItem className="collection__men" offer="HOT DEAL" label="FOR MEN" />
+        <CollectionItem className="collection__accesories" offer="LUXIROUS & TRENDY" label="ACCESORIES" />
+        <CollectionItem className="collection__women" offer="30% OFFER" label="WOMEN" />
+        <CollectionItem className="collection__kids" offer="NEW ARRIVALS" label="FOR KIDS" />
       </div>
       <section className="closes center">
         <h1 className="closes__title">Fetured Items</h1>
@@ -165,6 +164,5 @@ function App() {
     </>
   );
 }
-
 
 export default App;

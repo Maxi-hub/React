@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import '../style.scss';
+import '../../style.scss';
 import { useEffect, useState } from 'react';
 
 const fotos = [
@@ -59,7 +59,7 @@ const fotos = [
     },
 ];
 
-export const ClosesItems = ({ checkedValues }) => {
+export const ClothesItems = ({ checkedValues }) => {
     const [newFotos, setNewFotos] = useState(fotos);
     
     useEffect(() => {

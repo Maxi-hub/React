@@ -1,11 +1,11 @@
 import { Helmet } from 'react-helmet';
-import { Footer } from '../Footer';
-import { Information } from '../Information';
-import { Subscribe } from '../Subscribe';
+import { Footer } from '../footer/Footer';
+import { Information } from '../companyInformation/Information';
+import { Subscribe } from '../subscribe/Subscribe';
 import '../../style.scss';
 import { Link } from 'react-router-dom';
-import { BreadCrumbs } from '../BreadCrumbs';
-import { NavigationMenu } from '../NavigationMenu';
+import { BreadCrumbs } from '../breadCrumbs/BreadCrumbs';
+import { NavigationMenu } from '../navigationMenu/NavigationMenu';
 import { HeadingCenter } from '../header/HeadingCenter';
 import { SinglePageItems } from './SinglePageItems';
 

@@ -1,12 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Checkout } from './Checkout';
-import { Product } from './Product';
-import { ShoppingCart } from './ShoppingCart';
+import { Checkout } from './components/checkout/Checkout';
 import { SinglePage } from './components/singlePage/SinglePage';
+import { Product } from './components/product/Product';
+import { ShoppingCart } from './components/shoppingCart/ShoppingCart';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -22,5 +21,3 @@ root.render(
     </BrowserRouter>
   </React.StrictMode>
 );
-
-reportWebVitals();

@@ -1,5 +1,3 @@
-import React from 'react'
-
 export const CollectionItem = ({className, offer, label}) => {
     return (
         <div className={className}>

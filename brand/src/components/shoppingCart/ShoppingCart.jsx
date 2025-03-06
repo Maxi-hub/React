@@ -1,14 +1,14 @@
 import { useEffect, useRef, useState } from 'react';
-import { Footer } from './components/Footer';
-import { Information } from './components/Information';
-import { Subscribe } from './components/Subscribe';
-import './style.scss';
+import '../../style.scss';
 import { Helmet } from 'react-helmet';
-import { BreadCrumbs } from './components/BreadCrumbs';
-import { NavigationMenu } from './components/NavigationMenu';
 import { Link } from 'react-router-dom';
-import { ShoppingCartProduct } from './components/ShoppingCartProduct';
-import { HeadingCenter } from './components/header/HeadingCenter';
+import { ShoppingCartProduct } from './ShoppingCartProduct';
+import { HeadingCenter } from '../header/HeadingCenter';
+import { NavigationMenu } from '../navigationMenu/NavigationMenu';
+import { BreadCrumbs } from '../breadCrumbs/BreadCrumbs';
+import { Subscribe } from '../subscribe/Subscribe';
+import { Information } from '../companyInformation/Information';
+import { Footer } from '../footer/Footer';
 
 
 export const ShoppingCart = () => {

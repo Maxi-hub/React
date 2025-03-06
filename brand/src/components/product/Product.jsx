@@ -1,14 +1,16 @@
 import { Helmet } from 'react-helmet';
-import './style.scss';
-import { Subscribe } from './components/Subscribe';
-import { Information } from './components/Information';
-import { Footer } from './components/Footer';
-import { BreadCrumbs } from './components/BreadCrumbs';
-import { NavigationMenu } from './components/NavigationMenu';
-import { ClosesItems } from './components/ClosesItems';
+import '../../style.scss';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { HeadingCenter } from './components/header/HeadingCenter';
+import { HeadingCenter } from '../header/HeadingCenter';
+import { BreadCrumbs } from '../breadCrumbs/BreadCrumbs';
+import { NavigationMenu } from '../navigationMenu/NavigationMenu';
+import { Subscribe } from '../subscribe/Subscribe';
+import { Information } from '../companyInformation/Information';
+import { Footer } from '../footer/Footer';
+import { ClothesItems } from '../clothesItems/ClothesItems';
+import { ProductSections } from './ProductSections';
+import { Conditions } from '../conditions/Conditions';
 
 const categoryList = ['Accessories', 'Bags', 'Denim', 'Hoodies & Sweatshirts', 'Jackets & Coats', 'Polos', 'Shirts', 'Shoes', 'Sweaters & Knits', 'T-shirts', 'Tanks'];
 
@@ -37,32 +39,19 @@ export const Product = () => {
             <div className="central center">
                 <div className="leftPosition">
                     <div className="filter__content">
-                        
-                        <details className="filter__item" open>
-                            <summary className="filter__head">CATEGORY</summary>
-                            <div className="filter__link-box">
-                                {categoryList.map(item =>
-                                    <Link to="#" className="filter__link">{item}</Link>
-                                )}
-                            </div>
-                        </details>
-                        <details className="filter__item">
-                            <summary className="filter__head">BRAND</summary>
-                            <div className="filter__link-box">
-                                {categoryList.map(item =>
-                                    <Link to="#" className="filter__link">{item}</Link>
-                                )}
-                            </div>
-                        </details>
-                        <details className="filter__item">
-                            <summary className="filter__head">DESIGN</summary>
-                            <div className="filter__link-box">
-                                {categoryList.map(item =>
-                                    <Link to="#" className="filter__link">{item}</Link>
-                                )}
-                            </div>
-                        </details>
-
+                        <ProductSections
+                            categoryList={categoryList}
+                            sectionName="CATEGORY"
+                            open="open"
+                        />
+                        <ProductSections
+                            categoryList={categoryList}
+                            sectionName="BRAND"
+                        />
+                        <ProductSections
+                            categoryList={categoryList}
+                            sectionName="DESIGN"
+                        />
                     </div>
                 </div>
                 <div className="rightPosition">
@@ -167,7 +156,7 @@ export const Product = () => {
                         </div>
                     </div>
                     <div className="closes__box closes__box_position">
-                        <ClosesItems checkedValues={checkedValues} />
+                        <ClothesItems checkedValues={checkedValues} />
                     </div>
                     <div className="flipping">
                         <nav className="flipping__number">
@@ -190,26 +179,27 @@ export const Product = () => {
                 </div>
             </div>
             <div className="conditions center">
-                
-                <div className="conditions__item">
-                    <img src="img/delivery.png" alt="" />
-                    <h3 className="delivery_title">Free Delivery</h3>
-                    <p className="conditions__text">Worldwide delivery on all. Authorit tively morph next-generation innov tion
-                        with extensive models.</p>
-                </div>
-                <div className="conditions__item">
-                    <img src="img/sales.png" alt="" />
-                    <h3 className="sales_title">Sales & discounts</h3>
-                    <p className="conditions__text">Worldwide delivery on all. Authorit tively morph next-generation innov tion
-                        with extensive models.</p>
-                </div>
-                <div className="conditions__item">
-                    <img src="img/assurance.png" alt="" />
-                    <h3 className="assurance_title">Quality assurance</h3>
-                    <p className="conditions__text">Worldwide delivery on all. Authorit tively morph next-generation innov tion
-                        with extensive models.</p>
-                </div>
-                
+                <Conditions
+                    imgSrc="img/delivery.png"
+                    imgAlt=""
+                    title="Free Delivery"
+                    titleClassName="delivery_title"
+                    text="Worldwide delivery on all. Authorit tively morph next-generation innovation with extensive models."
+                />
+                <Conditions
+                    imgSrc="img/sales.png"
+                    imgAlt=""
+                    title="Sales & discounts"
+                    titleClassName="sales_title"
+                    text="Worldwide delivery on all. Authorit tively morph next-generation innovation with extensive models."
+                />
+                <Conditions
+                    imgSrc="img/assurance.png"
+                    imgAlt=""
+                    title="Quality assurance"
+                    titleClassName="assurance_title"
+                    text="Worldwide delivery on all. Authorit tively morph next-generation innovation with extensive models."
+                />
             </div>
             <Subscribe />
             <Information />
